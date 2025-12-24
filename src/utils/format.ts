@@ -35,10 +35,10 @@ export function formatDate(
   const dateObj = typeof date === 'string' || typeof date === 'number' ? new Date(date) : date;
 
   const options: Intl.DateTimeFormatOptions = {
-    short: { month: 'short', day: 'numeric', year: 'numeric' },
-    medium: { month: 'short', day: 'numeric', year: 'numeric' },
-    long: { month: 'long', day: 'numeric', year: 'numeric' },
-    full: { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' },
+    short: { month: 'short' as const, day: 'numeric' as const, year: 'numeric' as const },
+    medium: { month: 'short' as const, day: 'numeric' as const, year: 'numeric' as const },
+    long: { month: 'long' as const, day: 'numeric' as const, year: 'numeric' as const },
+    full: { weekday: 'long' as const, month: 'long' as const, day: 'numeric' as const, year: 'numeric' as const },
   }[format];
 
   return new Intl.DateTimeFormat(locale, options).format(dateObj);
