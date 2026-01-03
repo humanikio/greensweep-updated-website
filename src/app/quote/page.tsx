@@ -11,7 +11,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowRight, ArrowLeft, Check } from 'lucide-react';
 import { toast } from 'sonner';
 
-type Step = 1 | 2 | 3 | 4;
+type Step = 1 | 2 | 3;
 
 export default function QuotePage() {
   const [currentStep, setCurrentStep] = useState<Step>(1);
@@ -21,15 +21,12 @@ export default function QuotePage() {
     // Step 2: Property Details
     propertyType: '',
     propertySize: '',
-    // Step 3: Project Details
-    timeline: '',
-    budget: '',
-    description: '',
-    // Step 4: Contact Info
+    // Step 3: Contact Info
     name: '',
     email: '',
     phone: '',
     address: '',
+    description: '',
   });
 
   const handleServiceToggle = (service: string) => {
@@ -64,8 +61,6 @@ export default function QuotePage() {
       case 2:
         return formData.propertyType && formData.propertySize;
       case 3:
-        return formData.timeline && formData.budget;
-      case 4:
         return formData.name && formData.email && formData.phone;
       default:
         return false;
@@ -73,7 +68,7 @@ export default function QuotePage() {
   };
 
   const handleNext = () => {
-    if (canProceed() && currentStep < 4) {
+    if (canProceed() && currentStep < 3) {
       setCurrentStep((prev) => (prev + 1) as Step);
     }
   };
@@ -87,7 +82,7 @@ export default function QuotePage() {
   const handleSubmit = async () => {
     if (!canProceed()) return;
 
-    // Simulate form submission
+    // TODO: Replace with actual form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast.success(
@@ -99,13 +94,11 @@ export default function QuotePage() {
       services: [],
       propertyType: '',
       propertySize: '',
-      timeline: '',
-      budget: '',
-      description: '',
       name: '',
       email: '',
       phone: '',
       address: '',
+      description: '',
     });
     setCurrentStep(1);
   };
@@ -126,11 +119,15 @@ export default function QuotePage() {
       {/* Progress Steps */}
       <section className="bg-secondary py-8">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-between">
-              {[1, 2, 3, 4].map((step) => (
-                <div key={step} className="flex items-center flex-1">
-                  <div className="flex items-center w-full">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-start justify-between">
+              {[
+                { step: 1, label: 'Services' },
+                { step: 2, label: 'Property' },
+                { step: 3, label: 'Contact' },
+              ].map(({ step, label }, index) => (
+                <div key={step} className="flex items-center flex-1 last:flex-none">
+                  <div className="flex flex-col items-center">
                     <div
                       className={`flex h-10 w-10 items-center justify-center rounded-full border-2 font-semibold ${
                         step < currentStep
@@ -142,22 +139,23 @@ export default function QuotePage() {
                     >
                       {step < currentStep ? <Check className="h-5 w-5" /> : step}
                     </div>
-                    {step < 4 && (
-                      <div
-                        className={`h-0.5 flex-1 mx-2 ${
-                          step < currentStep ? 'bg-accent' : 'bg-border'
-                        }`}
-                      />
-                    )}
+                    <span
+                      className={`mt-2 text-sm ${
+                        step === currentStep ? 'text-accent font-medium' : 'text-muted-foreground'
+                      }`}
+                    >
+                      {label}
+                    </span>
                   </div>
+                  {index < 2 && (
+                    <div
+                      className={`h-0.5 flex-1 mx-2 mt-5 -translate-y-1/2 ${
+                        step < currentStep ? 'bg-accent' : 'bg-border'
+                      }`}
+                    />
+                  )}
                 </div>
               ))}
-            </div>
-            <div className="mt-4 flex justify-between text-sm">
-              <span className={currentStep === 1 ? 'text-accent font-medium' : 'text-muted-foreground'}>Services</span>
-              <span className={currentStep === 2 ? 'text-accent font-medium' : 'text-muted-foreground'}>Property</span>
-              <span className={currentStep === 3 ? 'text-accent font-medium' : 'text-muted-foreground'}>Details</span>
-              <span className={currentStep === 4 ? 'text-accent font-medium' : 'text-muted-foreground'}>Contact</span>
             </div>
           </div>
         </div>
@@ -253,76 +251,8 @@ export default function QuotePage() {
               </Card>
             )}
 
-            {/* Step 3: Project Details */}
+            {/* Step 3: Contact Information */}
             {currentStep === 3 && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Project details</CardTitle>
-                  <CardDescription>Help us understand your project scope</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-3">
-                    <Label>When would you like to start?</Label>
-                    <RadioGroup
-                      value={formData.timeline}
-                      onValueChange={(value) => handleRadioChange('timeline', value)}
-                    >
-                      {[
-                        { value: 'asap', label: 'As soon as possible' },
-                        { value: '1-3-months', label: 'Within 1-3 months' },
-                        { value: '3-6-months', label: 'Within 3-6 months' },
-                        { value: 'flexible', label: 'Flexible / Planning ahead' },
-                      ].map((timeline) => (
-                        <div key={timeline.value} className="flex items-center space-x-2">
-                          <RadioGroupItem value={timeline.value} id={timeline.value} />
-                          <Label htmlFor={timeline.value} className="font-normal cursor-pointer">
-                            {timeline.label}
-                          </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
-                  </div>
-
-                  <div className="space-y-3">
-                    <Label>Estimated Budget Range</Label>
-                    <RadioGroup
-                      value={formData.budget}
-                      onValueChange={(value) => handleRadioChange('budget', value)}
-                    >
-                      {[
-                        { value: 'under-5k', label: 'Under $5,000' },
-                        { value: '5k-10k', label: '$5,000 - $10,000' },
-                        { value: '10k-25k', label: '$10,000 - $25,000' },
-                        { value: 'over-25k', label: 'Over $25,000' },
-                        { value: 'unsure', label: "Not sure yet" },
-                      ].map((budget) => (
-                        <div key={budget.value} className="flex items-center space-x-2">
-                          <RadioGroupItem value={budget.value} id={budget.value} />
-                          <Label htmlFor={budget.value} className="font-normal cursor-pointer">
-                            {budget.label}
-                          </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="description">Project Description (Optional)</Label>
-                    <Textarea
-                      id="description"
-                      name="description"
-                      value={formData.description}
-                      onChange={handleInputChange}
-                      rows={5}
-                      placeholder="Tell us more about your vision for this project..."
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Step 4: Contact Information */}
-            {currentStep === 4 && (
               <Card>
                 <CardHeader>
                   <CardTitle>Your contact information</CardTitle>
@@ -377,6 +307,18 @@ export default function QuotePage() {
                       placeholder="123 Main St, St. Catharines, ON"
                     />
                   </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="description">Additional Details (Optional)</Label>
+                    <Textarea
+                      id="description"
+                      name="description"
+                      value={formData.description}
+                      onChange={handleInputChange}
+                      rows={4}
+                      placeholder="Tell us more about your project or any specific requirements..."
+                    />
+                  </div>
                 </CardContent>
               </Card>
             )}
@@ -392,7 +334,7 @@ export default function QuotePage() {
                 Back
               </Button>
 
-              {currentStep < 4 ? (
+              {currentStep < 3 ? (
                 <Button
                   onClick={handleNext}
                   disabled={!canProceed()}

@@ -120,69 +120,69 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Additional Services</h2>
-            <div className="grid gap-6 md:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Seasonal Cleanup</CardTitle>
+            <div className="grid grid-cols-2 gap-4 md:gap-6 md:grid-cols-3">
+              <Card className="p-2 sm:p-4">
+                <CardHeader className="p-2 sm:p-4 pb-0 sm:pb-0">
+                  <CardTitle className="text-sm sm:text-base">Seasonal Cleanup</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Spring and fall cleanup services to prepare your property for the season ahead.
+                <CardContent className="p-2 sm:p-4 pt-2">
+                  <CardDescription className="text-xs sm:text-sm">
+                    Spring and fall cleanup services to prepare your property.
                   </CardDescription>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Garden Bed Installation</CardTitle>
+              <Card className="p-2 sm:p-4">
+                <CardHeader className="p-2 sm:p-4 pb-0 sm:pb-0">
+                  <CardTitle className="text-sm sm:text-base">Garden Beds</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Beautiful planting beds with perennials, shrubs, and seasonal color.
+                <CardContent className="p-2 sm:p-4 pt-2">
+                  <CardDescription className="text-xs sm:text-sm">
+                    Beautiful planting beds with perennials and shrubs.
                   </CardDescription>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Irrigation Systems</CardTitle>
+              <Card className="p-2 sm:p-4">
+                <CardHeader className="p-2 sm:p-4 pb-0 sm:pb-0">
+                  <CardTitle className="text-sm sm:text-base">Irrigation</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Efficient watering systems to keep your landscape healthy while conserving water.
+                <CardContent className="p-2 sm:p-4 pt-2">
+                  <CardDescription className="text-xs sm:text-sm">
+                    Efficient watering systems for healthy landscapes.
                   </CardDescription>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Snow Removal</CardTitle>
+              <Card className="p-2 sm:p-4">
+                <CardHeader className="p-2 sm:p-4 pb-0 sm:pb-0">
+                  <CardTitle className="text-sm sm:text-base">Snow Removal</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Winter snow clearing services to keep your property safe and accessible.
+                <CardContent className="p-2 sm:p-4 pt-2">
+                  <CardDescription className="text-xs sm:text-sm">
+                    Winter snow clearing to keep your property safe.
                   </CardDescription>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Tree & Shrub Care</CardTitle>
+              <Card className="p-2 sm:p-4">
+                <CardHeader className="p-2 sm:p-4 pb-0 sm:pb-0">
+                  <CardTitle className="text-sm sm:text-base">Tree & Shrub Care</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Pruning, trimming, and health maintenance for your trees and shrubs.
+                <CardContent className="p-2 sm:p-4 pt-2">
+                  <CardDescription className="text-xs sm:text-sm">
+                    Pruning and maintenance for trees and shrubs.
                   </CardDescription>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Outdoor Lighting</CardTitle>
+              <Card className="p-2 sm:p-4">
+                <CardHeader className="p-2 sm:p-4 pb-0 sm:pb-0">
+                  <CardTitle className="text-sm sm:text-base">Outdoor Lighting</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Landscape lighting design and installation for beauty and security.
+                <CardContent className="p-2 sm:p-4 pt-2">
+                  <CardDescription className="text-xs sm:text-sm">
+                    Landscape lighting for beauty and security.
                   </CardDescription>
                 </CardContent>
               </Card>

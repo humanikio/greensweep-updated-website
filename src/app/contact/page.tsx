@@ -142,10 +142,10 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent>
                     <a
-                      href="tel:9055555296"
+                      href="tel:9059318022"
                       className="text-foreground hover:text-accent transition-colors"
                     >
-                      (905) 555-LAWN
+                      (905) 931-8022
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">
                       Call us during business hours
@@ -162,10 +162,10 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent>
                     <a
-                      href="mailto:info@greensweepniagara.ca"
+                      href="mailto:greensweepniagara@gmail.com"
                       className="text-foreground hover:text-accent transition-colors"
                     >
-                      info@greensweepniagara.ca
+                      greensweepniagara@gmail.com
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">
                       We respond within 24 hours
@@ -215,18 +215,26 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section */}
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-muted rounded-2xl aspect-video flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground">
-                  Map of Niagara Region service area
-                </p>
-              </div>
+            <h2 className="text-2xl font-bold text-center mb-6">Our Service Area</h2>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186193.95731862052!2d-79.40889565!3d43.09022785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d35ca5f4d1c6f9%3A0xb0e2a2e5c5b0b25c!2sNiagara%20Region%2C%20ON!5e0!3m2!1sen!2sca!4v1703548800000!5m2!1sen!2sca"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Greensweep Niagara Service Area - Niagara Region"
+              />
             </div>
+            <p className="text-center text-muted-foreground mt-4">
+              Proudly serving St. Catharines, Niagara-on-the-Lake, Fonthill, Grimsby, Beamsville, and surrounding areas
+            </p>
           </div>
         </div>
       </section>

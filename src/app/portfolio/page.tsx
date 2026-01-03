@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -156,60 +156,72 @@ export default function PortfolioPage() {
       {/* Testimonials Section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               What Our Clients Say
             </h2>
             <div className="grid gap-8 md:grid-cols-2">
-              <Card>
-                <CardHeader>
-                  <CardDescription className="text-base italic">
-                    "Greensweep completely transformed our backyard into an outdoor oasis. The
-                    attention to detail and craftsmanship is outstanding. We couldn't be happier!"
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold">— Sarah & Mike Thompson</p>
-                  <p className="text-sm text-muted-foreground">St. Catharines</p>
+              <Card className="bg-secondary">
+                <CardContent className="pt-6">
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <blockquote className="text-lg mb-4">
+                    "Carter and his team were flexible to my changing needs over the season and kept my yard in tip top shape. From garden prep and mulch to fall clean up they took care of all my summer chores with excellent care and attention to detail."
+                  </blockquote>
+                  <cite className="not-italic text-muted-foreground">
+                    — Jordan Duffy, St. Catharines
+                  </cite>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardDescription className="text-base italic">
-                    "Professional, reliable, and the results exceeded our expectations. Our new patio
-                    is the centerpiece of our backyard and perfect for entertaining."
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold">— Jennifer Rodriguez</p>
-                  <p className="text-sm text-muted-foreground">Niagara Falls</p>
+              <Card className="bg-secondary">
+                <CardContent className="pt-6">
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <blockquote className="text-lg mb-4">
+                    "Highly recommend Green Sweep Niagara! As advertised. Punctual, professional and go above and beyond expectations. Already reserved our spring cleaning and weekly maintenance for next season! Thank you Carter and team!"
+                  </blockquote>
+                  <cite className="not-italic text-muted-foreground">
+                    — Jason Talyor, St. Catharines
+                  </cite>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardDescription className="text-base italic">
-                    "The weekly lawn care service keeps our property looking pristine. The team is
-                    always on time and does exceptional work."
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold">— David Chen</p>
-                  <p className="text-sm text-muted-foreground">Welland</p>
+              <Card className="bg-secondary">
+                <CardContent className="pt-6">
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <blockquote className="text-lg mb-4">
+                    "The Greensweep guys have done a number of jobs at our place and they have always turned out great."
+                  </blockquote>
+                  <cite className="not-italic text-muted-foreground">
+                    — Bruno Bartel, St. Catharines
+                  </cite>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardDescription className="text-base italic">
-                    "From design to installation, the entire process was seamless. Our new landscape
-                    design has increased our home's curb appeal tremendously."
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold">— Amanda Wilson</p>
-                  <p className="text-sm text-muted-foreground">Niagara-on-the-Lake</p>
+              <Card className="bg-secondary">
+                <CardContent className="pt-6">
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <blockquote className="text-lg mb-4">
+                    "Fast prompt service, worked in the rain to get the job done, and the job was completed right! With Carter and crew you will not be disappointed."
+                  </blockquote>
+                  <cite className="not-italic text-muted-foreground">
+                    — Randy Arsenault, St. Catharines
+                  </cite>
                 </CardContent>
               </Card>
             </div>

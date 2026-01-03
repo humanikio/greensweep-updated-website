@@ -2,12 +2,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Award, Users, Heart, Clock } from 'lucide-react';
+import { ArrowRight, Award, Users, Heart, Clock, Leaf, Handshake } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About Us | Greensweep Niagara',
-  description: 'Learn about Greensweep Niagara, your trusted landscaping partner in the Niagara Region with years of experience and dedication to excellence.',
+  description: 'Learn about Greensweep Niagara, a locally-owned landscaping company founded in 2024, serving the Niagara Region with personalized, quality landscaping services.',
 };
 
 export default function AboutPage() {
@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="max-w-2xl text-white">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">About Us</h1>
             <p className="text-lg md:text-xl text-white/90">
-              Transforming Niagara Region properties into natural paradises since day one.
+              Your locally-owned landscaping partner in the Niagara Region.
             </p>
           </div>
         </div>
@@ -41,21 +41,21 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Our Story</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-muted-foreground mb-6">
-                Greensweep Niagara was founded with a simple mission: to create outdoor spaces that
-                bring joy, beauty, and functionality to every property we touch. What started as a
-                passion for landscaping has grown into a trusted name across the Niagara Region.
+                Founded in 2024, Greensweep Niagara is a locally-owned landscaping company born from
+                a passion for creating beautiful outdoor spaces. We started with a simple goal: to
+                provide the Niagara Region with high-quality, personalized landscaping services that
+                prioritize both aesthetics and functionality.
               </p>
               <p className="text-lg text-muted-foreground mb-6">
-                We believe that every property has potential—whether it's a small residential lawn or
-                a sprawling commercial landscape. Our team combines horticultural expertise with
-                artistic vision and practical craftsmanship to deliver results that exceed
-                expectations.
+                We take a personalized approach to every project. Whether you need regular lawn
+                maintenance, a complete landscape design, or hardscaping services, we work closely
+                with you to understand your vision and bring it to life. No shortcuts—just quality
+                work that speaks for itself.
               </p>
               <p className="text-lg text-muted-foreground">
-                Today, we're proud to serve homeowners, property managers, and businesses throughout
-                St. Catharines, Niagara Falls, Welland, and the surrounding areas. Each project we
-                complete is a testament to our commitment to quality, sustainability, and customer
-                satisfaction.
+                Our focus is on creating clean, low-maintenance, and functional landscapes that your
+                family will enjoy for years to come. We believe every outdoor space has potential,
+                and we're here to help you unlock it.
               </p>
             </div>
           </div>
@@ -67,42 +67,55 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">What Sets Us Apart</h2>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              <Card>
-                <CardHeader>
-                  <Award className="h-12 w-12 text-accent mb-4" />
-                  <CardTitle>Expert Craftsmanship</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Our team brings decades of combined experience in landscaping, horticulture, and
-                    hardscaping to every project.
-                  </p>
-                </CardContent>
-              </Card>
-
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               <Card>
                 <CardHeader>
                   <Users className="h-12 w-12 text-accent mb-4" />
-                  <CardTitle>Customer First</CardTitle>
+                  <CardTitle>Locally Owned</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Your satisfaction is our priority. We listen to your needs and work
-                    collaboratively to bring your vision to life.
+                    As a local Niagara business, we're invested in our community. We take pride in
+                    helping our neighbors create beautiful outdoor spaces.
                   </p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <Heart className="h-12 w-12 text-accent mb-4" />
+                  <Handshake className="h-12 w-12 text-accent mb-4" />
+                  <CardTitle>Personalized Approach</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Every project is unique. We listen to your needs, understand your vision, and
+                    tailor our services to fit your specific goals and budget.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <Award className="h-12 w-12 text-accent mb-4" />
+                  <CardTitle>Quality First</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    We never cut corners. From materials to craftsmanship, we deliver work that
+                    exceeds expectations and stands the test of time.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <Leaf className="h-12 w-12 text-accent mb-4" />
                   <CardTitle>Sustainable Practices</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    We use environmentally responsible methods and native plants whenever possible to
-                    support local ecosystems.
+                    We use environmentally responsible methods and recommend native plants to create
+                    landscapes that are beautiful and eco-friendly.
                   </p>
                 </CardContent>
               </Card>
@@ -114,8 +127,21 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Count on us to show up on time, communicate clearly, and deliver on our promises
-                    every single time.
+                    We show up on time, communicate clearly, and do what we say we'll do. Reliability
+                    is the foundation of our business.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <Heart className="h-12 w-12 text-accent mb-4" />
+                  <CardTitle>Customer Satisfaction</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Your happiness is our success. We're not done until you're completely satisfied
+                    with the results.
                   </p>
                 </CardContent>
               </Card>
@@ -124,23 +150,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Our Promise */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid gap-8 md:grid-cols-3 text-center">
-              <div>
-                <div className="text-5xl font-bold text-accent mb-2">500+</div>
-                <div className="text-lg text-muted-foreground">Projects Completed</div>
-              </div>
-              <div>
-                <div className="text-5xl font-bold text-accent mb-2">100%</div>
-                <div className="text-lg text-muted-foreground">Customer Satisfaction</div>
-              </div>
-              <div>
-                <div className="text-5xl font-bold text-accent mb-2">10+</div>
-                <div className="text-lg text-muted-foreground">Years Experience</div>
-              </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Promise</h2>
+            <div className="bg-secondary rounded-2xl p-8 md:p-12">
+              <p className="text-xl md:text-2xl text-foreground italic mb-6">
+                "We promise to treat your property as if it were our own, delivering honest work,
+                fair pricing, and results that make you proud to come home."
+              </p>
+              <p className="text-muted-foreground">
+                — The Greensweep Niagara Team
+              </p>
             </div>
           </div>
         </div>
@@ -160,12 +182,15 @@ export default function AboutPage() {
                 'St. Catharines',
                 'Niagara Falls',
                 'Welland',
+                'Thorold',
                 'Niagara-on-the-Lake',
                 'Port Colborne',
                 'Fort Erie',
                 'Grimsby',
                 'Lincoln',
                 'Pelham',
+                'Fonthill',
+                'Vineland',
               ].map((city) => (
                 <div key={city} className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-accent" />

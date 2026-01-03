@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X, Gift } from 'lucide-react';
 import { useState } from 'react';
 
 export function SiteHeader() {
@@ -15,7 +15,7 @@ export function SiteHeader() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight">
           <Image
-            src="/images/mockups/projectlogo.png"
+            src="/images/greensweep-logo.png"
             alt="Greensweep Niagara"
             width={40}
             height={40}
@@ -31,6 +31,18 @@ export function SiteHeader() {
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Services
+          </Link>
+          <Link
+            href="/areas"
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Areas
+          </Link>
+          <Link
+            href="/pricing"
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Pricing
           </Link>
           <Link
             href="/portfolio"
@@ -50,16 +62,23 @@ export function SiteHeader() {
           >
             Contact
           </Link>
+          <Link
+            href="/early-bird-draw"
+            className="flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
+          >
+            <Gift className="h-4 w-4" />
+            Win 50% Off
+          </Link>
         </nav>
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="tel:9055555296"
+            href="tel:9059318022"
             className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             <Phone className="h-4 w-4" />
-            (905) 555-LAWN
+            (905) 931-8022
           </a>
           <Button asChild className="bg-accent hover:bg-accent/90">
             <Link href="/quote">Get Free Quote</Link>
@@ -88,6 +107,20 @@ export function SiteHeader() {
               Services
             </Link>
             <Link
+              href="/areas"
+              className="py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Service Areas
+            </Link>
+            <Link
+              href="/pricing"
+              className="py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Pricing
+            </Link>
+            <Link
               href="/portfolio"
               className="py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
@@ -108,13 +141,21 @@ export function SiteHeader() {
             >
               Contact
             </Link>
+            <Link
+              href="/early-bird-draw"
+              className="flex items-center gap-2 py-3 text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Gift className="h-4 w-4" />
+              Win 50% Off — Early Bird Draw
+            </Link>
             <div className="mt-4 flex flex-col gap-3">
               <a
-                href="tel:9055555296"
+                href="tel:9059318022"
                 className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                (905) 555-LAWN
+                (905) 931-8022
               </a>
               <Button asChild className="bg-accent hover:bg-accent/90 w-full">
                 <Link href="/quote" onClick={() => setMobileMenuOpen(false)}>

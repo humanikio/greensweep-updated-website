@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
 
 export function SiteFooter() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image
-                src="/images/mockups/projectlogo.png"
+                src="/images/greensweep-logo.png"
                 alt="Greensweep Niagara"
                 width={40}
                 height={40}
@@ -23,10 +23,30 @@ export function SiteFooter() {
                 Niagara
               </span>
             </Link>
-            <p className="text-sm text-primary-foreground/80">
+            <p className="text-sm text-primary-foreground/80 mb-4">
               Premium landscaping services across the Niagara Region. Transform your outdoor space
               into a natural paradise.
             </p>
+            <div className="flex gap-4">
+              <a
+                href="https://facebook.com/greensweepniagara"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="https://instagram.com/greensweepniagara"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -39,6 +59,14 @@ export function SiteFooter() {
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Our Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/pricing"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Pricing Calculator
                 </Link>
               </li>
               <li>
@@ -63,6 +91,14 @@ export function SiteFooter() {
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  FAQ
                 </Link>
               </li>
               <li>
@@ -107,6 +143,61 @@ export function SiteFooter() {
             </ul>
           </div>
 
+          {/* Service Areas */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Service Areas</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/areas/niagara-on-the-lake"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Niagara-on-the-Lake
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/areas/st-catharines"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  St. Catharines
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/areas/fonthill"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Fonthill
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/areas/grimsby"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Grimsby
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/areas/port-dalhousie"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Port Dalhousie
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/areas"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  View All Areas →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact Info */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
@@ -115,10 +206,10 @@ export function SiteFooter() {
                 <Phone className="h-5 w-5 mt-0.5 flex-shrink-0" />
                 <div>
                   <a
-                    href="tel:9055555296"
+                    href="tel:9059318022"
                     className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
-                    (905) 555-LAWN
+                    (905) 931-8022
                   </a>
                 </div>
               </li>
@@ -126,10 +217,10 @@ export function SiteFooter() {
                 <Mail className="h-5 w-5 mt-0.5 flex-shrink-0" />
                 <div>
                   <a
-                    href="mailto:info@greensweepniagara.ca"
+                    href="mailto:greensweepniagara@gmail.com"
                     className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
-                    info@greensweepniagara.ca
+                    greensweepniagara@gmail.com
                   </a>
                 </div>
               </li>
