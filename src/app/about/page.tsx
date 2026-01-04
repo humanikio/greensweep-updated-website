@@ -17,7 +17,7 @@ export default function AboutPage() {
       <section className="relative h-[400px] lg:h-[500px]">
         <div className="absolute inset-0">
           <Image
-            src="/images/generated/hero-backyard-patio-sunset.png"
+            src="/project-photos/IMG_3843.JPEG"
             alt="About Greensweep Niagara"
             fill
             className="object-cover brightness-75"

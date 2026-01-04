@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ProjectCarousel } from '@/components/project-carousel';
 import { ArrowRight, Star } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -10,55 +11,55 @@ export const metadata: Metadata = {
   description: 'View our completed landscaping projects across the Niagara Region. See the quality and craftsmanship that sets us apart.',
 };
 
-// Mock portfolio data - in production this would come from a CMS or API
+// Portfolio data showcasing real completed projects
 const portfolioItems = [
   {
     id: 1,
-    title: 'Luxury Backyard Transformation',
+    title: 'Backyard Deck & Garden Retreat',
     category: 'Complete Landscape',
     location: 'St. Catharines',
-    description: 'A complete backyard overhaul featuring custom stonework patio, professional landscaping, and outdoor living spaces.',
-    image: '/images/generated/hero-backyard-patio-sunset.png',
+    description: 'Multi-level composite deck with river rock borders, concrete steps, and lush hosta plantings leading to a private seating area.',
+    image: '/project-photos/IMG_6614.JPEG',
   },
   {
     id: 2,
-    title: 'Pristine Lawn & Garden Beds',
-    category: 'Lawn Care & Design',
+    title: 'Spring Garden Bed Installation',
+    category: 'Landscape Design',
     location: 'Niagara Falls',
-    description: 'Weekly maintenance program with custom garden bed design featuring colorful perennials and ornamental grasses.',
-    image: '/images/generated/pristine-lawn-garden-beds.png',
+    description: 'Colorful tulip border along fence line with fresh mulch and maintained lawn edge for a clean, vibrant look.',
+    image: '/project-photos/IMG_3839.JPEG',
   },
   {
     id: 3,
-    title: 'Premium Hardscape Patio',
+    title: 'Front Entry Paver Walkway',
     category: 'Hardscaping',
     location: 'Welland',
-    description: 'Interlocking stone patio with built-in outdoor kitchen and fire pit area for entertaining.',
-    image: '/images/generated/service-hardscaping-patio.png',
+    description: 'Modern gray interlocking pavers with fresh mulch beds, ornamental shrubs, and accent boulders.',
+    image: '/project-photos/IMG_0866.jpeg',
   },
   {
     id: 4,
-    title: 'Custom Landscape Design',
+    title: 'Curved Landscape Bed Design',
     category: 'Landscape Design',
     location: 'Niagara-on-the-Lake',
-    description: 'Artistic landscape design with curved garden beds, ornamental grasses, and layered plantings.',
-    image: '/images/generated/service-landscape-design.png',
+    description: 'Sweeping mulch bed with layered boxwoods, evergreens, and ornamental trees for year-round interest.',
+    image: '/project-photos/IMG_4043.JPEG',
   },
   {
     id: 5,
-    title: 'Professional Lawn Care',
-    category: 'Lawn Maintenance',
+    title: 'Professional Lawn Maintenance',
+    category: 'Lawn Care',
     location: 'Lincoln',
-    description: 'Year-round lawn care program resulting in a healthy, vibrant lawn with perfect striping.',
-    image: '/images/generated/service-lawn-mowing.png',
+    description: 'Weekly mowing program with precision striping, creating a lush, healthy lawn with professional results.',
+    image: '/project-photos/IMG_4322.JPEG',
   },
   {
     id: 6,
-    title: 'Elegant Garden Retreat',
-    category: 'Complete Landscape',
+    title: 'Cozy Garden Corner',
+    category: 'Landscape Design',
     location: 'Grimsby',
-    description: 'Peaceful garden oasis with natural stone pathways, perennial beds, and privacy screening.',
-    image: '/images/generated/pristine-lawn-garden-beds.png',
+    description: 'Intimate garden retreat with decorative bench, perennial plantings, accent boulder, and privacy screening.',
+    image: '/project-photos/IMG_3838.JPEG',
   },
 ];
 
@@ -108,47 +109,25 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Before & After Section */}
+      {/* Project Showcase Section */}
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">See The Transformation</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">More Of Our Work</h2>
             <p className="text-lg text-muted-foreground">
-              Our work speaks for itself. Browse through our before and after photos to see the
-              dramatic transformations we create.
+              Browse through more of our completed projects across the Niagara Region.
             </p>
           </div>
-
-          {/* Example Before/After */}
-          <div className="max-w-5xl mx-auto">
-            <Card className="overflow-hidden">
-              <CardContent className="p-0">
-                <div className="grid md:grid-cols-2">
-                  <div className="relative h-[300px] md:h-[400px]">
-                    <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-semibold z-10">
-                      BEFORE
-                    </div>
-                    <Image
-                      src="/images/generated/pristine-lawn-garden-beds.png"
-                      alt="Before transformation"
-                      fill
-                      className="object-cover brightness-75 saturate-50"
-                    />
-                  </div>
-                  <div className="relative h-[300px] md:h-[400px]">
-                    <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-md text-sm font-semibold z-10">
-                      AFTER
-                    </div>
-                    <Image
-                      src="/images/generated/pristine-lawn-garden-beds.png"
-                      alt="After transformation"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="max-w-4xl mx-auto">
+            <ProjectCarousel
+              projects={[
+                { src: '/project-photos/IMG_3760.JPEG', alt: 'Manicured front lawn', caption: 'Residential Lawn Care' },
+                { src: '/project-photos/IMG_6615.JPEG', alt: 'Deck and planter detail', caption: 'Deck & Landscape Integration' },
+                { src: '/project-photos/IMG_3843.JPEG', alt: 'Front entry landscaping', caption: 'Front Yard Design' },
+                { src: '/project-photos/IMG_6586.JPEG', alt: 'Stepping stones in garden', caption: 'Garden Pathway' },
+                { src: '/project-photos/IMG_4057.JPEG', alt: 'Landscape bed installation', caption: 'Planting Design' },
+              ]}
+            />
           </div>
         </div>
       </section>

@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "Production-ready Next.js 15 boilerplate with TypeScript, Tailwind CSS, and Radix UI",
-  "keywords": ["nextjs", "react", "typescript", "tailwindcss", "boilerplate", "starter"],
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "boilerplate",
+    "starter"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -48,12 +55,14 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "critters": "^0.0.23",
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "eslint": "^9",
     "eslint-config-next": "^15.5.7",
@@ -75,8 +84,7 @@
     "typescript": "^5",
     "vaul": "^1.1.2",
     "zod": "^4.0.5",
-    "zustand": "^5.0.2",
-    "axios": "^1.7.9"
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "prettier": "^3.4.2",

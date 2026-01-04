@@ -17,7 +17,7 @@ export default function LandscapeDesignPage() {
       <section className="relative h-[400px] lg:h-[500px]">
         <div className="absolute inset-0">
           <Image
-            src="/images/generated/service-landscape-design.png"
+            src="/project-photos/IMG_4043.JPEG"
             alt="Professional landscape design"
             fill
             className="object-cover brightness-75"

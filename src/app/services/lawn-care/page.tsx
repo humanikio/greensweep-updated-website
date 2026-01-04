@@ -17,7 +17,7 @@ export default function LawnCarePage() {
       <section className="relative h-[400px] lg:h-[500px]">
         <div className="absolute inset-0">
           <Image
-            src="/images/generated/service-lawn-mowing.png"
+            src="/project-photos/IMG_4322.JPEG"
             alt="Professional lawn care services"
             fill
             className="object-cover brightness-75"

@@ -17,7 +17,7 @@ export default function HardscapingPage() {
       <section className="relative h-[400px] lg:h-[500px]">
         <div className="absolute inset-0">
           <Image
-            src="/images/generated/service-hardscaping-patio.png"
+            src="/project-photos/IMG_0866.jpeg"
             alt="Professional hardscaping and stonework"
             fill
             className="object-cover brightness-75"

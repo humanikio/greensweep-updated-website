@@ -10,7 +10,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { BeforeAfterSlider } from '@/components/before-after-slider';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 import { EarlyBirdFormModal } from '@/components/early-bird-form-modal';
 import {
   ArrowRight,
@@ -43,8 +50,8 @@ export default function EarlyBirdDrawPage() {
       <section className="relative h-[600px] lg:h-[700px]">
         <div className="absolute inset-0">
           <Image
-            src="/images/generated/pristine-lawn-garden-beds.png"
-            alt="Beautiful professionally maintained lawn"
+            src="/project-photos/IMG_4322.JPEG"
+            alt="Beautiful professionally maintained lawn with perfect stripes"
             fill
             className="object-cover brightness-50"
             priority
@@ -189,8 +196,8 @@ export default function EarlyBirdDrawPage() {
               </div>
               <div className="relative h-[400px] rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/generated/service-lawn-mowing.png"
-                  alt="Professional lawn mowing service"
+                  src="/project-photos/IMG_3760.JPEG"
+                  alt="Professional lawn mowing service results"
                   fill
                   className="object-cover"
                 />
@@ -267,7 +274,7 @@ export default function EarlyBirdDrawPage() {
             </p>
 
             {/* Trust badges */}
-            <div className="grid grid-cols-2 gap-6 md:gap-8 lg:grid-cols-4 mb-16">
+            <div className="grid grid-cols-2 gap-6 md:gap-8 lg:grid-cols-4 mb-12">
               <div className="text-center">
                 <div className="inline-block p-3 md:p-4 bg-accent/10 rounded-full mb-3 md:mb-4">
                   <Users className="h-6 w-6 md:h-8 md:w-8 text-accent" />
@@ -308,7 +315,7 @@ export default function EarlyBirdDrawPage() {
 
             {/* Testimonials */}
             <div className="grid gap-6 md:gap-8 md:grid-cols-2">
-              <Card className="bg-background">
+              <Card className="bg-background overflow-hidden pb-0 flex flex-col">
                 <CardContent className="pt-6">
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -322,9 +329,17 @@ export default function EarlyBirdDrawPage() {
                   </blockquote>
                   <cite className="not-italic text-muted-foreground">— Jordan Duffy, St. Catharines</cite>
                 </CardContent>
+                <div className="relative min-h-52 flex-1 w-full hidden md:block">
+                  <Image
+                    src="/project-photos/IMG_3839.JPEG"
+                    alt="Garden bed with tulips and fresh mulch"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </Card>
 
-              <Card className="bg-background">
+              <Card className="bg-background overflow-hidden pb-0 flex flex-col">
                 <CardContent className="pt-6">
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -338,9 +353,17 @@ export default function EarlyBirdDrawPage() {
                   </blockquote>
                   <cite className="not-italic text-muted-foreground">— Jason Talyor, St. Catharines</cite>
                 </CardContent>
+                <div className="relative min-h-52 flex-1 w-full hidden md:block">
+                  <Image
+                    src="/project-photos/IMG_4322.JPEG"
+                    alt="Perfectly striped lawn with professional finish"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </Card>
 
-              <Card className="bg-background">
+              <Card className="bg-background overflow-hidden pb-0 flex flex-col">
                 <CardContent className="pt-6">
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -353,9 +376,17 @@ export default function EarlyBirdDrawPage() {
                   </blockquote>
                   <cite className="not-italic text-muted-foreground">— Bruno Bartel, St. Catharines</cite>
                 </CardContent>
+                <div className="relative min-h-52 flex-1 w-full hidden md:block">
+                  <Image
+                    src="/project-photos/IMG_3838.JPEG"
+                    alt="Cozy garden corner with bench and perennials"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </Card>
 
-              <Card className="bg-background">
+              <Card className="bg-background overflow-hidden pb-0 flex flex-col">
                 <CardContent className="pt-6">
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -368,6 +399,14 @@ export default function EarlyBirdDrawPage() {
                   </blockquote>
                   <cite className="not-italic text-muted-foreground">— Randy Arsenault, St. Catharines</cite>
                 </CardContent>
+                <div className="relative min-h-52 flex-1 w-full hidden md:block">
+                  <Image
+                    src="/project-photos/IMG_3843.JPEG"
+                    alt="Front yard landscaping with Japanese maple"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </Card>
             </div>
 
@@ -505,22 +544,55 @@ export default function EarlyBirdDrawPage() {
         </div>
       </section>
 
-      {/* SECTION 6: Before/After Gallery - Visual proof */}
+      {/* SECTION 6: Project Gallery - Visual proof */}
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">See The Difference</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Recent Work</h2>
           <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Our work speaks for itself. Here's what professional lawn care looks like.
+            Real results from real Niagara homeowners. See the quality we deliver.
           </p>
           <div className="max-w-4xl mx-auto">
-            <BeforeAfterSlider
-              beforeImage="/images/generated/pristine-lawn-garden-beds.png"
-              afterImage="/images/generated/pristine-lawn-garden-beds.png"
-              beforeAlt="Before professional lawn care"
-              afterAlt="After professional lawn care"
-            />
+            <Carousel
+              opts={{
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                  stopOnInteraction: false,
+                  stopOnMouseEnter: true,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {[
+                  { src: '/project-photos/IMG_4322.JPEG', alt: 'Professional lawn with perfect stripes', caption: 'Weekly Lawn Care' },
+                  { src: '/project-photos/IMG_3760.JPEG', alt: 'Manicured front lawn', caption: 'Residential Lawn Maintenance' },
+                  { src: '/project-photos/IMG_3843.JPEG', alt: 'Elegant front entry landscaping', caption: 'Landscape Design' },
+                  { src: '/project-photos/IMG_4043.JPEG', alt: 'Curved garden bed with shrubs', caption: 'Garden Bed Installation' },
+                  { src: '/project-photos/IMG_6614.JPEG', alt: 'Backyard deck and garden retreat', caption: 'Complete Backyard Transformation' },
+                ].map((project, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden">
+                      <Image
+                        src={project.src}
+                        alt={project.alt}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <p className="text-white font-semibold text-lg">{project.caption}</p>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
             <p className="text-center text-muted-foreground mt-6">
-              Drag the slider to compare. Professional results that make your neighbors jealous.
+              Professional results that make your neighbors jealous.
             </p>
             <div className="text-center mt-8">
               <Button
@@ -528,7 +600,7 @@ export default function EarlyBirdDrawPage() {
                 className="bg-accent hover:bg-accent/90"
                 onClick={() => setIsModalOpen(true)}
               >
-                Transform My Lawn
+                Get Results Like These
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>

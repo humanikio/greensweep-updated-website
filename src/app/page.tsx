@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { BeforeAfterSlider } from '@/components/before-after-slider';
+import { ProjectCarousel } from '@/components/project-carousel';
 import {
   ArrowRight,
   Wrench,
@@ -30,8 +30,8 @@ export default function Home() {
       <section className="relative h-[600px] lg:h-[700px]">
         <div className="absolute inset-0">
           <Image
-            src="/images/generated/hero-backyard-patio-sunset.png"
-            alt="Beautiful backyard patio at sunset"
+            src="/project-photos/IMG_4322.JPEG"
+            alt="Beautiful professionally maintained lawn"
             fill
             className="object-cover brightness-75"
             priority
@@ -105,8 +105,8 @@ export default function Home() {
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
               <Image
-                src="/images/generated/pristine-lawn-garden-beds.png"
-                alt="Beautiful landscaped garden"
+                src="/project-photos/IMG_3843.JPEG"
+                alt="Elegant front entry landscaping"
                 fill
                 className="object-cover"
               />
@@ -128,7 +128,7 @@ export default function Home() {
             <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="relative h-64 overflow-hidden rounded-t-lg">
                 <Image
-                  src="/images/generated/service-lawn-mowing.png"
+                  src="/project-photos/IMG_3760.JPEG"
                   alt="Lawn Care & Maintenance"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -156,7 +156,7 @@ export default function Home() {
             <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="relative h-64 overflow-hidden rounded-t-lg">
                 <Image
-                  src="/images/generated/service-landscape-design.png"
+                  src="/project-photos/IMG_4043.JPEG"
                   alt="Landscape Design"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -184,7 +184,7 @@ export default function Home() {
             <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="relative h-64 overflow-hidden rounded-t-lg">
                 <Image
-                  src="/images/generated/service-hardscaping-patio.png"
+                  src="/project-photos/IMG_6586.JPEG"
                   alt="Hardscaping & Stonework"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -229,21 +229,21 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6 max-w-6xl mx-auto">
             <div className="relative h-48 sm:h-72 rounded-xl overflow-hidden group">
               <Image
-                src="/images/generated/hero-backyard-patio-sunset.png"
-                alt="Backyard patio transformation"
+                src="/project-photos/IMG_6614.JPEG"
+                alt="Backyard deck and garden retreat"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 text-white">
                 <p className="text-xs sm:text-sm text-white/80">St. Catharines</p>
-                <h3 className="font-semibold text-sm sm:text-base">Backyard Patio</h3>
+                <h3 className="font-semibold text-sm sm:text-base">Backyard Retreat</h3>
               </div>
             </div>
             <div className="relative h-48 sm:h-72 rounded-xl overflow-hidden group">
               <Image
-                src="/images/generated/pristine-lawn-garden-beds.png"
-                alt="Garden bed installation"
+                src="/project-photos/IMG_3839.JPEG"
+                alt="Tulip garden bed installation"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -255,15 +255,15 @@ export default function Home() {
             </div>
             <div className="relative h-48 sm:h-72 rounded-xl overflow-hidden group col-span-2 lg:col-span-1">
               <Image
-                src="/images/generated/service-hardscaping-patio.png"
-                alt="Stone walkway project"
+                src="/project-photos/IMG_0866.jpeg"
+                alt="Front entry paver walkway"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 text-white">
                 <p className="text-xs sm:text-sm text-white/80">Welland</p>
-                <h3 className="font-semibold text-sm sm:text-base">Stone Walkway & Patio</h3>
+                <h3 className="font-semibold text-sm sm:text-base">Paver Walkway</h3>
               </div>
             </div>
           </div>
@@ -278,17 +278,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* See The Difference Section */}
+      {/* Project Showcase Section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">See The Difference</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Work In Action</h2>
+          <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Real results from real Niagara homeowners. See the quality we deliver.
+          </p>
           <div className="max-w-4xl mx-auto">
-            <BeforeAfterSlider
-              beforeImage="/images/generated/pristine-lawn-garden-beds.png"
-              afterImage="/images/generated/pristine-lawn-garden-beds.png"
-              beforeAlt="Before landscaping"
-              afterAlt="After landscaping"
-            />
+            <ProjectCarousel />
           </div>
         </div>
       </section>
