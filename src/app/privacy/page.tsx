@@ -2,8 +2,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Greensweep Niagara',
-  description: 'Privacy Policy for Greensweep Niagara. Learn how we collect, use, and protect your personal information.',
+  title: 'Privacy Policy | GreenSweep Niagara',
+  description: 'Privacy Policy for GreenSweep Niagara. Learn how we collect, use, and protect your personal information.',
 };
 
 export default function PrivacyPage() {
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto prose prose-lg">
             <p className="text-lg text-muted-foreground mb-8">
-              At Greensweep Niagara, we are committed to protecting your privacy. This Privacy Policy
+              At GreenSweep Niagara, we are committed to protecting your privacy. This Privacy Policy
               explains how we collect, use, disclose, and safeguard your information when you visit our
               website or use our services.
             </p>
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
               please contact us:
             </p>
             <div className="bg-secondary rounded-lg p-6 mb-6">
-              <p className="text-foreground font-semibold mb-2">Greensweep Niagara</p>
+              <p className="text-foreground font-semibold mb-2">GreenSweep Niagara</p>
               <p className="text-muted-foreground">
                 Email:{' '}
                 <a

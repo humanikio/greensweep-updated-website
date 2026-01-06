@@ -63,7 +63,7 @@ export const locations: LocationData[] = [
           'Year-round property maintenance including spring cleanup, fall leaf removal, and garden bed preparation to keep your estate looking immaculate for every season.',
       },
     ],
-    seoTitle: 'Landscaping Services in Niagara-on-the-Lake | Greensweep Niagara',
+    seoTitle: 'Landscaping Services in Niagara-on-the-Lake | GreenSweep Niagara',
     seoDescription:
       'Premium landscaping services for Niagara-on-the-Lake estates and luxury properties. Lawn care, garden design, and hardscaping by local experts. Free consultation.',
     featuredTestimonial: {
@@ -113,7 +113,7 @@ export const locations: LocationData[] = [
           'Professional garden bed maintenance, mulching, shrub trimming, and seasonal plantings to keep your property looking polished year-round.',
       },
     ],
-    seoTitle: 'Landscaping Services in Fonthill & Pelham | Greensweep Niagara',
+    seoTitle: 'Landscaping Services in Fonthill & Pelham | GreenSweep Niagara',
     seoDescription:
       'Professional landscaping for Fonthill and Pelham homes. Lawn care, landscape design, patios & more. Trusted by Pelham homeowners. Get a free quote today.',
   },
@@ -158,7 +158,7 @@ export const locations: LocationData[] = [
           'Custom patios, fire features, and entertainment areas designed to take advantage of Grimsby\'s beautiful natural setting.',
       },
     ],
-    seoTitle: 'Landscaping Services in Grimsby, Ontario | Greensweep Niagara',
+    seoTitle: 'Landscaping Services in Grimsby, Ontario | GreenSweep Niagara',
     seoDescription:
       'Expert landscaping for Grimsby waterfront and escarpment properties. Lawn care, garden design, patios & hardscaping. Serving Grimsby homeowners. Free estimates.',
   },
@@ -203,7 +203,7 @@ export const locations: LocationData[] = [
           'Year-round care for wine country properties, ensuring your grounds look impeccable for every season of entertaining.',
       },
     ],
-    seoTitle: 'Landscaping Services in Beamsville & Lincoln | Greensweep Niagara',
+    seoTitle: 'Landscaping Services in Beamsville & Lincoln | GreenSweep Niagara',
     seoDescription:
       'Professional landscaping for Beamsville wine country estates. Lawn care, landscape design, and property maintenance. Serving Lincoln and Twenty Valley. Free quotes.',
   },
@@ -248,7 +248,7 @@ export const locations: LocationData[] = [
           'Full-service programs including lawn care, garden maintenance, spring and fall cleanup, keeping your Garden City home looking its best.',
       },
     ],
-    seoTitle: 'Landscaping Services in St. Catharines | Greensweep Niagara',
+    seoTitle: 'Landscaping Services in St. Catharines | GreenSweep Niagara',
     seoDescription:
       'Professional landscaping for St. Catharines homes. Lawn care, garden design, patios & seasonal cleanup. Serving Glenridge, Western Hill & all neighborhoods. Free quotes.',
     featuredTestimonial: {
@@ -298,7 +298,7 @@ export const locations: LocationData[] = [
           'Year-round maintenance programs tailored to the demands of waterfront living, from spring debris cleanup to preparing gardens for winter winds.',
       },
     ],
-    seoTitle: 'Landscaping Services in Port Dalhousie | Greensweep Niagara',
+    seoTitle: 'Landscaping Services in Port Dalhousie | GreenSweep Niagara',
     seoDescription:
       'Premium waterfront landscaping for Port Dalhousie homes. Heritage garden care, lakefront design & lawn maintenance. Local experts serving the Port. Free consultation.',
     featuredTestimonial: {

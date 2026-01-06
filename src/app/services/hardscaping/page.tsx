@@ -6,7 +6,7 @@ import { Check, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hardscaping & Stonework | Greensweep Niagara',
+  title: 'Hardscaping & Stonework | GreenSweep Niagara',
   description: 'Professional hardscaping services in the Niagara Region. Patios, walkways, retaining walls, and outdoor living spaces built to last.',
 };
 

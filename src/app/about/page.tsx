@@ -6,8 +6,8 @@ import { ArrowRight, Award, Users, Heart, Clock, Leaf, Handshake } from 'lucide-
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | Greensweep Niagara',
-  description: 'Learn about Greensweep Niagara, a locally-owned landscaping company founded in 2024, serving the Niagara Region with personalized, quality landscaping services.',
+  title: 'About Us | GreenSweep Niagara',
+  description: 'Learn about GreenSweep Niagara, a locally-owned landscaping company founded in 2024, serving the Niagara Region with personalized, quality landscaping services.',
 };
 
 export default function AboutPage() {
@@ -18,7 +18,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <Image
             src="/project-photos/IMG_3843.JPEG"
-            alt="About Greensweep Niagara"
+            alt="About GreenSweep Niagara"
             fill
             className="object-cover brightness-75"
             priority
@@ -41,7 +41,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Our Story</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-muted-foreground mb-6">
-                Founded in 2024, Greensweep Niagara is a locally-owned landscaping company born from
+                Founded in 2024, GreenSweep Niagara is a locally-owned landscaping company born from
                 a passion for creating beautiful outdoor spaces. We started with a simple goal: to
                 provide the Niagara Region with high-quality, personalized landscaping services that
                 prioritize both aesthetics and functionality.
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 fair pricing, and results that make you proud to come home."
               </p>
               <p className="text-muted-foreground">
-                — The Greensweep Niagara Team
+                — The GreenSweep Niagara Team
               </p>
             </div>
           </div>
@@ -208,7 +208,7 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
           <p className="text-lg md:text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
             Ready to transform your outdoor space? Get in touch for a free consultation and
-            discover what Greensweep Niagara can do for your property.
+            discover what GreenSweep Niagara can do for your property.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>

@@ -229,7 +229,7 @@ export default function ContactPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Greensweep Niagara Service Area - Niagara Region"
+                title="GreenSweep Niagara Service Area - Niagara Region"
               />
             </div>
             <p className="text-center text-muted-foreground mt-4">

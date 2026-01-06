@@ -7,7 +7,7 @@ import { ArrowRight, Star } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Greensweep Niagara',
+  title: 'Portfolio | GreenSweep Niagara',
   description: 'View our completed landscaping projects across the Niagara Region. See the quality and craftsmanship that sets us apart.',
 };
 
@@ -180,7 +180,7 @@ export default function PortfolioPage() {
                     ))}
                   </div>
                   <blockquote className="text-lg mb-4">
-                    "The Greensweep guys have done a number of jobs at our place and they have always turned out great."
+                    "The GreenSweep guys have done a number of jobs at our place and they have always turned out great."
                   </blockquote>
                   <cite className="not-italic text-muted-foreground">
                     — Bruno Bartel, St. Catharines

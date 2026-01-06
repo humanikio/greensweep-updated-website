@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!location) {
     return {
-      title: 'Location Not Found | Greensweep Niagara',
+      title: 'Location Not Found | GreenSweep Niagara',
     };
   }
 
@@ -325,7 +325,7 @@ export default async function LocationPage({ params }: PageProps) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            name: 'Greensweep Niagara',
+            name: 'GreenSweep Niagara',
             description: location.seoDescription,
             image: '/images/greensweep-logo.png',
             telephone: '905-931-8022',

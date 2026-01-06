@@ -371,7 +371,7 @@ export default function EarlyBirdDrawPage() {
                     ))}
                   </div>
                   <blockquote className="text-base md:text-lg mb-4">
-                    "The Greensweep guys have done a number of jobs at our place and they have always
+                    "The GreenSweep guys have done a number of jobs at our place and they have always
                     turned out great."
                   </blockquote>
                   <cite className="not-italic text-muted-foreground">— Bruno Bartel, St. Catharines</cite>

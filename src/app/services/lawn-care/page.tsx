@@ -6,7 +6,7 @@ import { Check, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Lawn Care & Maintenance | Greensweep Niagara',
+  title: 'Lawn Care & Maintenance | GreenSweep Niagara',
   description: 'Professional lawn care and maintenance services in the Niagara Region. Weekly mowing, fertilization, aeration, and more.',
 };
 
@@ -41,7 +41,7 @@ export default function LawnCarePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground mb-8">
-              A beautiful lawn is the foundation of any great landscape. At Greensweep Niagara, we
+              A beautiful lawn is the foundation of any great landscape. At GreenSweep Niagara, we
               provide comprehensive lawn care services tailored to the unique needs of your property
               and the Niagara climate. From regular maintenance to specialized treatments, we ensure
               your lawn stays healthy and vibrant throughout the seasons.

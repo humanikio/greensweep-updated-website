@@ -6,7 +6,7 @@ import { Check, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Landscape Design | Greensweep Niagara',
+  title: 'Landscape Design | GreenSweep Niagara',
   description: 'Custom landscape design services in the Niagara Region. From concept to installation, we create beautiful outdoor spaces.',
 };
 

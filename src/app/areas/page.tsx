@@ -7,9 +7,9 @@ import { ArrowRight, MapPin, Phone } from 'lucide-react';
 import { locations } from '@/data/locations';
 
 export const metadata: Metadata = {
-  title: 'Service Areas | Landscaping Across Niagara Region | Greensweep Niagara',
+  title: 'Service Areas | Landscaping Across Niagara Region | GreenSweep Niagara',
   description:
-    'Greensweep Niagara provides professional landscaping services throughout the Niagara Region including Niagara-on-the-Lake, St. Catharines, Grimsby, Fonthill, and more.',
+    'GreenSweep Niagara provides professional landscaping services throughout the Niagara Region including Niagara-on-the-Lake, St. Catharines, Grimsby, Fonthill, and more.',
 };
 
 export default function AreasPage() {
@@ -35,7 +35,7 @@ export default function AreasPage() {
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
             From the historic streets of Niagara-on-the-Lake to the waterfront communities of
-            Grimsby and Port Dalhousie, Greensweep Niagara brings professional landscaping
+            Grimsby and Port Dalhousie, GreenSweep Niagara brings professional landscaping
             services to homeowners across the region.
           </p>
           <Button size="lg" variant="secondary" asChild>
@@ -188,7 +188,7 @@ export default function AreasPage() {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">Community Investment</h3>
                 <p className="text-muted-foreground">
-                  When you hire Greensweep Niagara, you're supporting a local business that
+                  When you hire GreenSweep Niagara, you're supporting a local business that
                   reinvests in our community. We live here, work here, and take pride in making
                   our region more beautiful.
                 </p>
@@ -245,7 +245,7 @@ export default function AreasPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            name: 'Greensweep Niagara',
+            name: 'GreenSweep Niagara',
             description:
               'Professional landscaping services throughout the Niagara Region including lawn care, landscape design, and hardscaping.',
             image: '/images/greensweep-logo.png',

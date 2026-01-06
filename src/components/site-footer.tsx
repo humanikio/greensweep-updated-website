@@ -12,13 +12,13 @@ export function SiteFooter() {
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image
                 src="/images/greensweep-logo.png"
-                alt="Greensweep Niagara"
+                alt="GreenSweep Niagara"
                 width={40}
                 height={40}
                 className="h-10 w-10 brightness-0 invert"
               />
               <span className="font-bold text-lg uppercase">
-                Greensweep
+                GreenSweep
                 <br />
                 Niagara
               </span>
@@ -241,7 +241,7 @@ export function SiteFooter() {
         <div className="mt-8 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-primary-foreground/60">
-              © {new Date().getFullYear()} Greensweep Niagara. All rights reserved.
+              © {new Date().getFullYear()} GreenSweep Niagara. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link

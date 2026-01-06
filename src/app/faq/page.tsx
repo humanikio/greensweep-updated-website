@@ -10,8 +10,8 @@ import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FAQ | Greensweep Niagara',
-  description: 'Find answers to frequently asked questions about Greensweep Niagara landscaping services, pricing, service areas, and more.',
+  title: 'FAQ | GreenSweep Niagara',
+  description: 'Find answers to frequently asked questions about GreenSweep Niagara landscaping services, pricing, service areas, and more.',
 };
 
 const faqs = [
@@ -28,10 +28,10 @@ const faqs = [
       },
       {
         question: 'Are you licensed and insured?',
-        answer: 'Yes, Greensweep Niagara is fully licensed and insured. We carry comprehensive liability insurance to protect both our team and your property.',
+        answer: 'Yes, GreenSweep Niagara is fully licensed and insured. We carry comprehensive liability insurance to protect both our team and your property.',
       },
       {
-        question: 'What sets Greensweep apart from other landscapers?',
+        question: 'What sets GreenSweep apart from other landscapers?',
         answer: 'We take a personalized approach to every project. As a locally-owned company founded in 2024, we prioritize quality over shortcuts and focus on creating clean, low-maintenance, functional landscapes. We treat every property as if it were our own.',
       },
     ],

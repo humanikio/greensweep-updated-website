@@ -2,8 +2,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Greensweep Niagara',
-  description: 'Terms of Service for Greensweep Niagara landscaping services. Read our service terms, policies, and conditions.',
+  title: 'Terms of Service | GreenSweep Niagara',
+  description: 'Terms of Service for GreenSweep Niagara landscaping services. Read our service terms, policies, and conditions.',
 };
 
 export default function TermsPage() {
@@ -24,13 +24,13 @@ export default function TermsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto prose prose-lg">
             <p className="text-lg text-muted-foreground mb-8">
-              Welcome to Greensweep Niagara. By using our website or engaging our landscaping services,
+              Welcome to GreenSweep Niagara. By using our website or engaging our landscaping services,
               you agree to be bound by these Terms of Service. Please read them carefully.
             </p>
 
             <h2 className="text-2xl font-bold mt-12 mb-4">1. Services</h2>
             <p className="text-muted-foreground mb-4">
-              Greensweep Niagara provides landscaping services including but not limited to lawn care
+              GreenSweep Niagara provides landscaping services including but not limited to lawn care
               and maintenance, landscape design, hardscaping, garden installation, seasonal cleanup,
               and related outdoor services throughout the Niagara Region.
             </p>
@@ -68,7 +68,7 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-bold mt-12 mb-4">5. Property Access</h2>
             <p className="text-muted-foreground mb-4">
-              By engaging our services, you grant Greensweep Niagara permission to access your property
+              By engaging our services, you grant GreenSweep Niagara permission to access your property
               for the purpose of providing the agreed-upon services. You agree to:
             </p>
             <ul className="list-disc pl-6 text-muted-foreground mb-6 space-y-2">
@@ -146,7 +146,7 @@ export default function TermsPage() {
               For questions about these Terms of Service, please contact us:
             </p>
             <div className="bg-secondary rounded-lg p-6 mb-6">
-              <p className="text-foreground font-semibold mb-2">Greensweep Niagara</p>
+              <p className="text-foreground font-semibold mb-2">GreenSweep Niagara</p>
               <p className="text-muted-foreground">
                 Email:{' '}
                 <a

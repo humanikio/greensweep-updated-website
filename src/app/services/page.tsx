@@ -6,7 +6,7 @@ import { ArrowRight, Wrench, Palette, Building2 } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Services | Greensweep Niagara',
+  title: 'Our Services | GreenSweep Niagara',
   description: 'Comprehensive landscaping services in the Niagara Region including lawn care, landscape design, and hardscaping.',
 };
 

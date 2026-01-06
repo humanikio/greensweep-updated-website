@@ -16,12 +16,12 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight">
           <Image
             src="/images/greensweep-logo.png"
-            alt="Greensweep Niagara"
+            alt="GreenSweep Niagara"
             width={40}
             height={40}
             className="h-10 w-10"
           />
-          <span className="text-primary uppercase">Greensweep Niagara</span>
+          <span className="text-primary uppercase">GreenSweep Niagara</span>
         </Link>
 
         {/* Desktop Navigation */}

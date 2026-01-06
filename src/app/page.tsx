@@ -69,7 +69,7 @@ export default function Home() {
                 Your Local Landscaping Experts
               </h2>
               <p className="text-lg text-muted-foreground mb-4">
-                Founded in 2024, Greensweep Niagara is a locally-owned landscaping company
+                Founded in 2024, GreenSweep Niagara is a locally-owned landscaping company
                 dedicated to transforming outdoor spaces across the Niagara Region.
               </p>
               <p className="text-lg text-muted-foreground mb-6">
@@ -332,7 +332,7 @@ export default function Home() {
               </AccordionItem>
               <AccordionItem value="item-4">
                 <AccordionTrigger className="text-left">
-                  What sets Greensweep apart from other landscapers?
+                  What sets GreenSweep apart from other landscapers?
                 </AccordionTrigger>
                 <AccordionContent>
                   We take a personalized approach to every project. As a locally-owned company, we
@@ -404,7 +404,7 @@ export default function Home() {
                   ))}
                 </div>
                 <blockquote className="text-sm sm:text-lg mb-3 sm:mb-4">
-                  "The Greensweep guys have done a number of jobs at our place and they have always turned out great."
+                  "The GreenSweep guys have done a number of jobs at our place and they have always turned out great."
                 </blockquote>
                 <cite className="not-italic text-muted-foreground text-sm">
                   — Bruno Bartel, St. Catharines
