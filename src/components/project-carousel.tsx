@@ -23,9 +23,9 @@ interface ProjectCarouselProps {
 const defaultProjects: Project[] = [
   { src: '/project-photos/IMG_4322.JPEG', alt: 'Professional lawn with perfect stripes', caption: 'Weekly Lawn Care' },
   { src: '/project-photos/IMG_3760.JPEG', alt: 'Manicured front lawn', caption: 'Residential Lawn Maintenance' },
-  { src: '/project-photos/IMG_3843.JPEG', alt: 'Elegant front entry landscaping', caption: 'Landscape Design' },
+  { src: '/project-photos/2707940586657463592.jpg', alt: 'Elegant front entry landscaping', caption: 'Landscape Design' },
   { src: '/project-photos/IMG_4043.JPEG', alt: 'Curved garden bed with shrubs', caption: 'Garden Bed Installation' },
-  { src: '/project-photos/IMG_6614.JPEG', alt: 'Backyard deck and garden retreat', caption: 'Complete Backyard Transformation' },
+  { src: '/project-photos/IMG_3838.JPEG', alt: 'Private garden sanctuary with bench and boulder', caption: 'Private Garden Sanctuary' },
 ];
 
 export function ProjectCarousel({ projects = defaultProjects }: ProjectCarouselProps) {

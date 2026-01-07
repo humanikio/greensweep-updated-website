@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const portfolioItems = [
   {
     id: 1,
-    title: 'Backyard Deck & Garden Retreat',
+    title: 'Private Garden Sanctuary',
     category: 'Complete Landscape',
     location: 'St. Catharines',
-    description: 'Multi-level composite deck with river rock borders, concrete steps, and lush hosta plantings leading to a private seating area.',
-    image: '/project-photos/IMG_6614.JPEG',
+    description: 'Tranquil backyard retreat featuring a decorative bench nestled among lush hostas, natural boulder accent, fresh mulch beds, and a lattice privacy screen.',
+    image: '/project-photos/IMG_3838.JPEG',
   },
   {
     id: 2,
@@ -51,7 +51,7 @@ const portfolioItems = [
     category: 'Lawn Care',
     location: 'Lincoln',
     description: 'Weekly mowing program with precision striping, creating a lush, healthy lawn with professional results.',
-    image: '/project-photos/IMG_4322.JPEG',
+    image: '/project-photos/IMG_4140.JPEG',
   },
   {
     id: 6,
@@ -123,7 +123,7 @@ export default function PortfolioPage() {
               projects={[
                 { src: '/project-photos/IMG_3760.JPEG', alt: 'Manicured front lawn', caption: 'Residential Lawn Care' },
                 { src: '/project-photos/IMG_6615.JPEG', alt: 'Deck and planter detail', caption: 'Deck & Landscape Integration' },
-                { src: '/project-photos/IMG_3843.JPEG', alt: 'Front entry landscaping', caption: 'Front Yard Design' },
+                { src: '/project-photos/2707940586657463592.jpg', alt: 'Front entry landscaping', caption: 'Front Yard Design' },
                 { src: '/project-photos/IMG_6586.JPEG', alt: 'Stepping stones in garden', caption: 'Garden Pathway' },
                 { src: '/project-photos/IMG_4057.JPEG', alt: 'Landscape bed installation', caption: 'Planting Design' },
               ]}

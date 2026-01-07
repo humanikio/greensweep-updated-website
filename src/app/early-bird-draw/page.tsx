@@ -401,7 +401,7 @@ export default function EarlyBirdDrawPage() {
                 </CardContent>
                 <div className="relative min-h-52 flex-1 w-full hidden md:block">
                   <Image
-                    src="/project-photos/IMG_3843.JPEG"
+                    src="/project-photos/2707940586657463592.jpg"
                     alt="Front yard landscaping with Japanese maple"
                     fill
                     className="object-cover"
@@ -569,9 +569,9 @@ export default function EarlyBirdDrawPage() {
                 {[
                   { src: '/project-photos/IMG_4322.JPEG', alt: 'Professional lawn with perfect stripes', caption: 'Weekly Lawn Care' },
                   { src: '/project-photos/IMG_3760.JPEG', alt: 'Manicured front lawn', caption: 'Residential Lawn Maintenance' },
-                  { src: '/project-photos/IMG_3843.JPEG', alt: 'Elegant front entry landscaping', caption: 'Landscape Design' },
+                  { src: '/project-photos/2707940586657463592.jpg', alt: 'Elegant front entry landscaping', caption: 'Landscape Design' },
                   { src: '/project-photos/IMG_4043.JPEG', alt: 'Curved garden bed with shrubs', caption: 'Garden Bed Installation' },
-                  { src: '/project-photos/IMG_6614.JPEG', alt: 'Backyard deck and garden retreat', caption: 'Complete Backyard Transformation' },
+                  { src: '/project-photos/IMG_3838.JPEG', alt: 'Private garden sanctuary with bench and boulder', caption: 'Private Garden Sanctuary' },
                 ].map((project, index) => (
                   <CarouselItem key={index}>
                     <div className="relative aspect-[16/10] rounded-2xl overflow-hidden">

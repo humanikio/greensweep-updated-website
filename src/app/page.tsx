@@ -39,20 +39,20 @@ export default function Home() {
         </div>
         <div className="relative container mx-auto h-full flex items-center px-4">
           <div className="max-w-2xl text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight drop-shadow-lg">
               Stunning Landscapes To Inspire Your Family
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-white/90">
+            <p className="text-lg md:text-xl mb-8 text-white/90 drop-shadow-md">
               Clean, low-maintenance, functional landscapes across the Niagara Region
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" asChild>
+              <Button size="lg" variant="secondary" className="shadow-lg" asChild>
                 <Link href="/portfolio">
                   Explore Our Work
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" className="bg-accent hover:bg-accent/90" asChild>
+              <Button size="lg" className="bg-accent hover:bg-accent/90 shadow-lg" asChild>
                 <Link href="/quote">Get Free Consultation</Link>
               </Button>
             </div>
@@ -105,7 +105,7 @@ export default function Home() {
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
               <Image
-                src="/project-photos/IMG_3843.JPEG"
+                src="/project-photos/IMG_3979.JPEG"
                 alt="Elegant front entry landscaping"
                 fill
                 className="object-cover"
@@ -184,7 +184,7 @@ export default function Home() {
             <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="relative h-64 overflow-hidden rounded-t-lg">
                 <Image
-                  src="/project-photos/IMG_6586.JPEG"
+                  src="/project-photos/IMG_5659.JPEG"
                   alt="Hardscaping & Stonework"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -229,15 +229,15 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6 max-w-6xl mx-auto">
             <div className="relative h-48 sm:h-72 rounded-xl overflow-hidden group">
               <Image
-                src="/project-photos/IMG_6614.JPEG"
-                alt="Backyard deck and garden retreat"
+                src="/project-photos/IMG_3838.JPEG"
+                alt="Private garden sanctuary with bench and natural boulder"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 text-white">
                 <p className="text-xs sm:text-sm text-white/80">St. Catharines</p>
-                <h3 className="font-semibold text-sm sm:text-base">Backyard Retreat</h3>
+                <h3 className="font-semibold text-sm sm:text-base">Garden Sanctuary</h3>
               </div>
             </div>
             <div className="relative h-48 sm:h-72 rounded-xl overflow-hidden group">
