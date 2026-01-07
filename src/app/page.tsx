@@ -30,7 +30,7 @@ export default function Home() {
       <section className="relative h-[600px] lg:h-[700px]">
         <div className="absolute inset-0">
           <Image
-            src="/project-photos/IMG_4322.JPEG"
+            src="/project-photos/IMG_4140.JPEG"
             alt="Beautiful professionally maintained lawn"
             fill
             className="object-cover brightness-75"
