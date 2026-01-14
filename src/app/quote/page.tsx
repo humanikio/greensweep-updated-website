@@ -5,102 +5,57 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Checkbox } from '@/components/ui/checkbox';
-import { ArrowRight, ArrowLeft, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { toast } from 'sonner';
-
-type Step = 1 | 2 | 3;
+import { QuoteFormData, initialFormData } from '@/lib/form-types';
 
 export default function QuotePage() {
-  const [currentStep, setCurrentStep] = useState<Step>(1);
-  const [formData, setFormData] = useState({
-    // Step 1: Service Selection
-    services: [] as string[],
-    // Step 2: Property Details
-    propertyType: '',
-    propertySize: '',
-    // Step 3: Contact Info
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    description: '',
-  });
+  const [formData, setFormData] = useState<QuoteFormData>(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleServiceToggle = (service: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      services: prev.services.includes(service)
-        ? prev.services.filter((s) => s !== service)
-        : [...prev.services, service],
-    }));
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
 
-  const handleRadioChange = (name: string, value: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const canSubmit = () => {
+    return formData.name && formData.email && formData.phone;
   };
 
-  const canProceed = () => {
-    switch (currentStep) {
-      case 1:
-        return formData.services.length > 0;
-      case 2:
-        return formData.propertyType && formData.propertySize;
-      case 3:
-        return formData.name && formData.email && formData.phone;
-      default:
-        return false;
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!canSubmit()) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://automations.myzylo.app/webhook/webhook-1768088685170', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: 'quote-request',
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      toast.success(
+        "Quote request submitted! We'll contact you within 24 hours to discuss your project."
+      );
+      setFormData(initialFormData);
+    } catch (error) {
+      toast.error('Something went wrong. Please try again or call us directly.');
+    } finally {
+      setIsSubmitting(false);
     }
-  };
-
-  const handleNext = () => {
-    if (canProceed() && currentStep < 3) {
-      setCurrentStep((prev) => (prev + 1) as Step);
-    }
-  };
-
-  const handleBack = () => {
-    if (currentStep > 1) {
-      setCurrentStep((prev) => (prev - 1) as Step);
-    }
-  };
-
-  const handleSubmit = async () => {
-    if (!canProceed()) return;
-
-    // TODO: Replace with actual form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast.success(
-      "Quote request submitted! We'll contact you within 24 hours to discuss your project."
-    );
-
-    // Reset form
-    setFormData({
-      services: [],
-      propertyType: '',
-      propertySize: '',
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      description: '',
-    });
-    setCurrentStep(1);
   };
 
   return (
@@ -110,155 +65,23 @@ export default function QuotePage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Get Your Free Quote</h1>
           <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-            Answer a few quick questions and we'll provide a detailed quote for your landscaping
+            Enter your details below and we'll get back to you with a personalized quote for your landscaping
             project.
           </p>
-        </div>
-      </section>
-
-      {/* Progress Steps */}
-      <section className="bg-secondary py-8">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="flex items-start justify-between">
-              {[
-                { step: 1, label: 'Services' },
-                { step: 2, label: 'Property' },
-                { step: 3, label: 'Contact' },
-              ].map(({ step, label }, index) => (
-                <div key={step} className="flex items-center flex-1 last:flex-none">
-                  <div className="flex flex-col items-center">
-                    <div
-                      className={`flex h-10 w-10 items-center justify-center rounded-full border-2 font-semibold ${
-                        step < currentStep
-                          ? 'bg-accent border-accent text-accent-foreground'
-                          : step === currentStep
-                            ? 'border-accent text-accent'
-                            : 'border-border text-muted-foreground'
-                      }`}
-                    >
-                      {step < currentStep ? <Check className="h-5 w-5" /> : step}
-                    </div>
-                    <span
-                      className={`mt-2 text-sm ${
-                        step === currentStep ? 'text-accent font-medium' : 'text-muted-foreground'
-                      }`}
-                    >
-                      {label}
-                    </span>
-                  </div>
-                  {index < 2 && (
-                    <div
-                      className={`h-0.5 flex-1 mx-2 mt-5 -translate-y-1/2 ${
-                        step < currentStep ? 'bg-accent' : 'bg-border'
-                      }`}
-                    />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Form Section */}
       <section className="flex-1 py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            {/* Step 1: Service Selection */}
-            {currentStep === 1 && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>What services are you interested in?</CardTitle>
-                  <CardDescription>Select all that apply</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-3">
-                    {[
-                      { id: 'lawn-care', label: 'Lawn Care & Maintenance' },
-                      { id: 'landscape-design', label: 'Landscape Design' },
-                      { id: 'hardscaping', label: 'Hardscaping & Stonework' },
-                      { id: 'spring-cleanup', label: 'Spring/Fall Cleanup' },
-                      { id: 'irrigation', label: 'Irrigation Systems' },
-                      { id: 'other', label: 'Other (please specify in project details)' },
-                    ].map((service) => (
-                      <div key={service.id} className="flex items-center space-x-2">
-                        <Checkbox
-                          id={service.id}
-                          checked={formData.services.includes(service.id)}
-                          onCheckedChange={() => handleServiceToggle(service.id)}
-                        />
-                        <label
-                          htmlFor={service.id}
-                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                        >
-                          {service.label}
-                        </label>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Step 2: Property Details */}
-            {currentStep === 2 && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Tell us about your property</CardTitle>
-                  <CardDescription>This helps us provide an accurate quote</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-3">
-                    <Label>Property Type</Label>
-                    <RadioGroup
-                      value={formData.propertyType}
-                      onValueChange={(value) => handleRadioChange('propertyType', value)}
-                    >
-                      {['Residential', 'Commercial', 'Industrial', 'Multi-Unit'].map((type) => (
-                        <div key={type} className="flex items-center space-x-2">
-                          <RadioGroupItem value={type.toLowerCase()} id={type.toLowerCase()} />
-                          <Label htmlFor={type.toLowerCase()} className="font-normal cursor-pointer">
-                            {type}
-                          </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
-                  </div>
-
-                  <div className="space-y-3">
-                    <Label>Approximate Property Size</Label>
-                    <RadioGroup
-                      value={formData.propertySize}
-                      onValueChange={(value) => handleRadioChange('propertySize', value)}
-                    >
-                      {[
-                        { value: 'small', label: 'Small (< 5,000 sq ft)' },
-                        { value: 'medium', label: 'Medium (5,000 - 10,000 sq ft)' },
-                        { value: 'large', label: 'Large (10,000 - 20,000 sq ft)' },
-                        { value: 'extra-large', label: 'Extra Large (> 20,000 sq ft)' },
-                      ].map((size) => (
-                        <div key={size.value} className="flex items-center space-x-2">
-                          <RadioGroupItem value={size.value} id={size.value} />
-                          <Label htmlFor={size.value} className="font-normal cursor-pointer">
-                            {size.label}
-                          </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Step 3: Contact Information */}
-            {currentStep === 3 && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Your contact information</CardTitle>
-                  <CardDescription>How can we reach you with your quote?</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
+          <div className="max-w-md mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle>Request a Quote</CardTitle>
+                <CardDescription>Fill out the form and we'll be in touch within 24 hours.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name *</Label>
                     <Input
@@ -297,63 +120,18 @@ export default function QuotePage() {
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="address">Property Address (Optional)</Label>
-                    <Input
-                      id="address"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleInputChange}
-                      placeholder="123 Main St, St. Catharines, ON"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="description">Additional Details (Optional)</Label>
-                    <Textarea
-                      id="description"
-                      name="description"
-                      value={formData.description}
-                      onChange={handleInputChange}
-                      rows={4}
-                      placeholder="Tell us more about your project or any specific requirements..."
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Navigation Buttons */}
-            <div className="mt-8 flex justify-between">
-              <Button
-                variant="outline"
-                onClick={handleBack}
-                disabled={currentStep === 1}
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back
-              </Button>
-
-              {currentStep < 3 ? (
-                <Button
-                  onClick={handleNext}
-                  disabled={!canProceed()}
-                  className="bg-accent hover:bg-accent/90"
-                >
-                  Next
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              ) : (
-                <Button
-                  onClick={handleSubmit}
-                  disabled={!canProceed()}
-                  className="bg-accent hover:bg-accent/90"
-                >
-                  Submit Quote Request
-                  <Check className="ml-2 h-4 w-4" />
-                </Button>
-              )}
-            </div>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full bg-accent hover:bg-accent/90"
+                    disabled={!canSubmit() || isSubmitting}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Get My Free Quote'}
+                    {!isSubmitting && <Check className="ml-2 h-4 w-4" />}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

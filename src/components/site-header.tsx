@@ -39,12 +39,6 @@ export function SiteHeader() {
             Areas
           </Link>
           <Link
-            href="/pricing"
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Pricing
-          </Link>
-          <Link
             href="/portfolio"
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
@@ -112,13 +106,6 @@ export function SiteHeader() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Service Areas
-            </Link>
-            <Link
-              href="/pricing"
-              className="py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Pricing
             </Link>
             <Link
               href="/portfolio"

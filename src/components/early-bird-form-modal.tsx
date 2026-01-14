@@ -11,32 +11,19 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Checkbox } from '@/components/ui/checkbox';
 import { Gift, ArrowRight, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
+import { QuoteFormData, initialFormData } from '@/lib/form-types';
 
 interface EarlyBirdFormModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
-const services = [
-  { id: 'lawn-care', label: 'Lawn Care & Maintenance' },
-  { id: 'landscape-design', label: 'Landscape Design' },
-  { id: 'hardscaping', label: 'Hardscaping & Stonework' },
-  { id: 'spring-cleanup', label: 'Spring/Fall Cleanup' },
-];
-
 export function EarlyBirdFormModal({ open, onOpenChange }: EarlyBirdFormModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    services: [] as string[],
-  });
+  const [formData, setFormData] = useState<QuoteFormData>(initialFormData);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
@@ -45,40 +32,48 @@ export function EarlyBirdFormModal({ open, onOpenChange }: EarlyBirdFormModalPro
     }));
   };
 
-  const handleServiceToggle = (serviceId: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      services: prev.services.includes(serviceId)
-        ? prev.services.filter((s) => s !== serviceId)
-        : [...prev.services, serviceId],
-    }));
+  const canSubmit = () => {
+    return formData.name && formData.email && formData.phone;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.phone) {
+    if (!canSubmit()) {
       toast.error('Please fill in all required fields');
       return;
     }
 
     setIsSubmitting(true);
 
-    // TODO: Replace with actual form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('https://automations.myzylo.app/webhook/webhook-1768088685170', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: 'early-bird-draw',
+          submittedAt: new Date().toISOString(),
+        }),
+      });
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    } catch (error) {
+      setIsSubmitting(false);
+      toast.error('Something went wrong. Please try again or call us directly.');
+      return;
+    }
 
     // Reset form after delay and close
     setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        services: [],
-      });
+      setFormData(initialFormData);
       setIsSuccess(false);
       onOpenChange(false);
     }, 3000);
@@ -88,7 +83,7 @@ export function EarlyBirdFormModal({ open, onOpenChange }: EarlyBirdFormModalPro
     if (!isSubmitting) {
       onOpenChange(newOpen);
       if (!newOpen) {
-        // Reset success state when closing
+        // Reset state when closing
         setTimeout(() => setIsSuccess(false), 200);
       }
     }
@@ -96,7 +91,7 @@ export function EarlyBirdFormModal({ open, onOpenChange }: EarlyBirdFormModalPro
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-md">
         {isSuccess ? (
           <div className="py-8 text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4">
@@ -122,9 +117,9 @@ export function EarlyBirdFormModal({ open, onOpenChange }: EarlyBirdFormModalPro
 
             <form onSubmit={handleSubmit} className="space-y-4 mt-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Full Name *</Label>
+                <Label htmlFor="modal-name">Full Name *</Label>
                 <Input
-                  id="name"
+                  id="modal-name"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
@@ -135,9 +130,9 @@ export function EarlyBirdFormModal({ open, onOpenChange }: EarlyBirdFormModalPro
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email Address *</Label>
+                <Label htmlFor="modal-email">Email Address *</Label>
                 <Input
-                  id="email"
+                  id="modal-email"
                   name="email"
                   type="email"
                   value={formData.email}
@@ -149,9 +144,9 @@ export function EarlyBirdFormModal({ open, onOpenChange }: EarlyBirdFormModalPro
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number *</Label>
+                <Label htmlFor="modal-phone">Phone Number *</Label>
                 <Input
-                  id="phone"
+                  id="modal-phone"
                   name="phone"
                   type="tel"
                   value={formData.phone}
@@ -162,45 +157,11 @@ export function EarlyBirdFormModal({ open, onOpenChange }: EarlyBirdFormModalPro
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="address">Property Address (Optional)</Label>
-                <Input
-                  id="address"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleInputChange}
-                  placeholder="123 Main St, St. Catharines, ON"
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              <div className="space-y-3">
-                <Label>Services Interested In (Optional)</Label>
-                <div className="grid grid-cols-1 gap-2">
-                  {services.map((service) => (
-                    <div key={service.id} className="flex items-center space-x-2">
-                      <Checkbox
-                        id={`modal-${service.id}`}
-                        checked={formData.services.includes(service.id)}
-                        onCheckedChange={() => handleServiceToggle(service.id)}
-                        disabled={isSubmitting}
-                      />
-                      <label
-                        htmlFor={`modal-${service.id}`}
-                        className="text-sm leading-none cursor-pointer"
-                      >
-                        {service.label}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               <Button
                 type="submit"
                 size="lg"
                 className="w-full bg-accent hover:bg-accent/90"
-                disabled={isSubmitting}
+                disabled={!canSubmit() || isSubmitting}
               >
                 {isSubmitting ? (
                   'Submitting...'

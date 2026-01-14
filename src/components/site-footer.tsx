@@ -63,14 +63,6 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/pricing"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Pricing Calculator
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/portfolio"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
