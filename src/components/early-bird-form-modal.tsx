@@ -91,7 +91,7 @@ export function EarlyBirdFormModal({ open, onOpenChange }: EarlyBirdFormModalPro
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md" onInteractOutside={(e) => e.preventDefault()}>
         {isSuccess ? (
           <div className="py-8 text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4">
