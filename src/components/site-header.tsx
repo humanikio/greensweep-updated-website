@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Phone, Menu, X, Gift } from 'lucide-react';
+import { Phone, Menu, X, Scissors } from 'lucide-react';
 import { useState } from 'react';
 
 export function SiteHeader() {
@@ -57,11 +57,11 @@ export function SiteHeader() {
             Contact
           </Link>
           <Link
-            href="/early-bird-draw"
+            href="/weekly-mowing"
             className="flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
           >
-            <Gift className="h-4 w-4" />
-            Win 50% Off
+            <Scissors className="h-4 w-4" />
+            Lawn Care Offers
           </Link>
         </nav>
 
@@ -129,12 +129,12 @@ export function SiteHeader() {
               Contact
             </Link>
             <Link
-              href="/early-bird-draw"
+              href="/weekly-mowing"
               className="flex items-center gap-2 py-3 text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Gift className="h-4 w-4" />
-              Win 50% Off — Early Bird Draw
+              <Scissors className="h-4 w-4" />
+              Lawn Care Offers
             </Link>
             <div className="mt-4 flex flex-col gap-3">
               <a
