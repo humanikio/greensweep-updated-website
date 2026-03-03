@@ -47,8 +47,8 @@ export default function WeeklyMowingPage() {
       <WeeklyMowingFormModal open={isModalOpen} onOpenChange={setIsModalOpen} />
 
       {/* SECTION 1: Hero - Pain point lead, offer as supporting hook */}
-      <section className="relative h-[600px] lg:h-[700px]">
-        <div className="absolute inset-0">
+      <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 scale-175 md:scale-100">
           <Image
             src="/project-photos/IMG_4322.JPEG"
             alt="Beautiful professionally maintained lawn with perfect stripes"
@@ -57,16 +57,16 @@ export default function WeeklyMowingPage() {
             priority
           />
         </div>
-        <div className="relative container mx-auto h-full flex items-center px-4">
+        <div className="relative container mx-auto px-4">
           <div className="max-w-3xl text-white">
-            <div className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4 md:mb-6">
               <Calendar className="inline h-4 w-4 mr-2" />
               OFFER ENDS MAY 1, 2026
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
               Tired of Spending Your Weekends Behind a Mower?
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90">
+            <p className="text-xl md:text-2xl mb-6 md:mb-8 text-white/90">
               Get $25 off your first professional mow. We'll be at your door within 48 hours — and
               your weekends are yours again.
             </p>
