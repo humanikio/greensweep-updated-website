@@ -75,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/weekly-mowing`,
+      url: `${baseUrl}/spring-cleanup`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,

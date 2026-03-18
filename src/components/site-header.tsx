@@ -57,7 +57,7 @@ export function SiteHeader() {
             Contact
           </Link>
           <Link
-            href="/weekly-mowing"
+            href="/spring-cleanup"
             className="flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
           >
             <Scissors className="h-4 w-4" />
@@ -129,7 +129,7 @@ export function SiteHeader() {
               Contact
             </Link>
             <Link
-              href="/weekly-mowing"
+              href="/spring-cleanup"
               className="flex items-center gap-2 py-3 text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
