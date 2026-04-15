@@ -60,7 +60,7 @@ export default function SpringCleanupPage() {
           <div className="max-w-3xl text-white">
             <div className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4 md:mb-6">
               <Calendar className="inline h-4 w-4 mr-2" />
-              BUNDLE OFFER ENDS APRIL 15, 2026
+              BUNDLE OFFER ENDS MAY 20, 2026
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
               Your Yard Survived Winter. Now Let's Make It Shine.
@@ -194,7 +194,7 @@ export default function SpringCleanupPage() {
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold mb-2">Save 10% on Everything</h3>
                 <p className="text-sm text-muted-foreground">
-                  Cleanup and mulch booked separately costs more. Bundle them before April 15 and
+                  Cleanup and mulch booked separately costs more. Bundle them before May 20 and
                   the whole job is 10% off.
                 </p>
               </CardContent>
@@ -232,7 +232,7 @@ export default function SpringCleanupPage() {
               className="bg-accent hover:bg-accent/90"
               onClick={() => setIsModalOpen(true)}
             >
-              Lock In 10% Off Before April 15
+              Lock In 10% Off Before May 20
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -247,7 +247,7 @@ export default function SpringCleanupPage() {
               <div>
                 <div className="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-6">
                   <Calendar className="inline h-4 w-4 mr-2" />
-                  LIMITED TIME — ENDS APRIL 15
+                  LIMITED TIME — ENDS MAY 20
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   Spring Fills Up Fast. Don't Get Stuck on the Waitlist.
@@ -261,7 +261,7 @@ export default function SpringCleanupPage() {
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                     <span>
-                      <strong>10% off</strong> when you bundle cleanup + mulch before April 15
+                      <strong>10% off</strong> when you bundle cleanup + mulch before May 20
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -724,7 +724,7 @@ export default function SpringCleanupPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   You save 10% off the total when you book spring cleanup and mulch together before
-                  April 15, 2026. The exact dollar amount depends on your property size — we'll
+                  May 20, 2026. The exact dollar amount depends on your property size — we'll
                   give you a quote when we call you back.
                 </AccordionContent>
               </AccordionItem>
@@ -743,7 +743,7 @@ export default function SpringCleanupPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   Absolutely — we offer spring cleanup as a standalone service too. But the 10%
-                  bundle discount only applies when you combine cleanup with mulch before April 15.
+                  bundle discount only applies when you combine cleanup with mulch before May 20.
                   It's the best value and the best results for your yard.
                 </AccordionContent>
               </AccordionItem>
@@ -771,7 +771,7 @@ export default function SpringCleanupPage() {
                   When does this offer expire?
                 </AccordionTrigger>
                 <AccordionContent>
-                  The 10% spring cleanup bundle offer expires April 15, 2026. Sign up before then
+                  The 10% spring cleanup bundle offer expires May 20, 2026. Sign up before then
                   to lock in the discount. After that, cleanup and mulch are still available but
                   priced separately.
                 </AccordionContent>
@@ -796,7 +796,7 @@ export default function SpringCleanupPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <Calendar className="inline h-4 w-4 mr-2" />
-            BUNDLE OFFER ENDS APRIL 15, 2026
+            BUNDLE OFFER ENDS MAY 20, 2026
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Your Yard Deserves a Fresh Start. So Do You.
@@ -810,7 +810,7 @@ export default function SpringCleanupPage() {
             variant="secondary"
             onClick={() => setIsModalOpen(true)}
           >
-            Claim 10% Off Before April 15
+            Claim 10% Off Before May 20
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <p className="mt-6 text-sm text-primary-foreground/70">
