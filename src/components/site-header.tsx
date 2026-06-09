@@ -2,12 +2,36 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Phone, Menu, X, Scissors } from 'lucide-react';
 import { useState } from 'react';
+import { isBareLandingRoute } from '@/lib/landing-routes';
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Distraction-free landing pages (paid traffic) show only the logo, so there
+  // are no nav links to leave the page. The only conversion path is the form.
+  if (isBareLandingRoute(pathname)) {
+    return (
+      <header className="w-full border-b bg-white">
+        <div className="container mx-auto flex h-16 items-center px-4">
+          <div className="flex items-center gap-2 text-xl font-bold tracking-tight">
+            <Image
+              src="/images/greensweep-logo.png"
+              alt="GreenSweep Niagara"
+              width={40}
+              height={40}
+              className="h-10 w-10"
+            />
+            <span className="uppercase text-primary">GreenSweep Niagara</span>
+          </div>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">

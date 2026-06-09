@@ -1,8 +1,20 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import { isBareLandingRoute } from '@/lib/landing-routes';
 
 export function SiteFooter() {
+  const pathname = usePathname();
+
+  // Hidden on distraction-free landing pages; those pages supply their own
+  // service-area and contact block.
+  if (isBareLandingRoute(pathname)) {
+    return null;
+  }
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
