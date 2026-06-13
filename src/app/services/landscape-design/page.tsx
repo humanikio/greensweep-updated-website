@@ -1,267 +1,229 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ArrowRight } from 'lucide-react';
+import {
+  Eyebrow,
+  SectionHeading,
+  primaryBtn,
+  heroOutlineBtn,
+  whiteBtn,
+  floatingCard,
+} from '@/components/site-ui';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Landscape Design | GreenSweep Niagara',
-  description: 'Custom landscape design services in the Niagara Region. From concept to installation, we create beautiful outdoor spaces.',
+  description:
+    'Custom landscape design across the Niagara Region. From first concept to final planting, we design and build cohesive outdoor spaces for the finest properties.',
 };
+
+const processSteps = [
+  {
+    n: '01',
+    title: 'Initial Consultation',
+    body: 'We meet on-site to understand your vision, assess the property, talk budget, and spot the opportunities and challenges in your landscape.',
+  },
+  {
+    n: '02',
+    title: 'Concept Development',
+    body: 'Our designers shape the first concepts: layout plans, plant palettes, and hardscape ideas, presented so we know we are aligned on style.',
+  },
+  {
+    n: '03',
+    title: 'Detailed Design & Approval',
+    body: 'We refine the design to your feedback, with detailed plans for plants, materials, grading, and irrigation, then finalize everything with you before work begins.',
+  },
+  {
+    n: '04',
+    title: 'Installation',
+    body: 'Our crew brings the design to life with meticulous attention to detail, managing every phase and keeping you informed throughout.',
+  },
+];
+
+const designServices = [
+  { title: 'Garden Bed Design', body: 'Beautiful plantings with year-round interest and colour.' },
+  {
+    title: 'Tree & Shrub Selection',
+    body: 'Structural plants chosen for your climate and conditions.',
+  },
+  { title: 'Perennial Gardens', body: 'Low-maintenance gardens that return year after year.' },
+  {
+    title: 'Outdoor Living Spaces',
+    body: 'Patios, fire pits, and seating areas integrated seamlessly.',
+  },
+  { title: 'Privacy Screening', body: 'Natural barriers using hedges, trees, and strategic planting.' },
+  { title: 'Water Features', body: 'Fountains, ponds, and streams that add a sense of calm.' },
+  { title: 'Lighting Design', body: 'Strategic outdoor lighting for beauty and safety after dark.' },
+  { title: 'Drainage Solutions', body: 'Water issues solved while keeping the design beautiful.' },
+];
+
+const whyStandOut = [
+  'Designs tailored to Niagara’s climate and growing conditions',
+  'A balance of beauty, function, and easy upkeep',
+  'Sustainable practices and native plant integration',
+  'Comprehensive plans that can be installed in phases',
+  'One team from design through installation, so the vision is realized',
+];
+
+const gallery = [
+  { src: '/project-photos/IMG_3838.JPEG', alt: 'Private garden retreat with a bench and natural stone' },
+  { src: '/project-photos/IMG_3839.JPEG', alt: 'Layered garden beds in full seasonal bloom' },
+  { src: '/project-photos/IMG_4042.JPEG', alt: 'Established garden border with layered shrubs and trees' },
+  { src: '/project-photos/IMG_6587.JPEG', alt: 'Natural stone steps and a river-rock path through a woodland garden' },
+];
 
 export default function LandscapeDesignPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative h-[400px] lg:h-[500px]">
+      {/* ============ HERO ============ */}
+      <section className="relative flex min-h-[60vh] items-center md:min-h-[70vh]">
         <div className="absolute inset-0">
           <Image
-            src="/project-photos/IMG_4043.JPEG"
-            alt="Professional landscape design"
+            src="/project-photos/IMG_6614.JPEG"
+            alt="Designed composite deck and stone steps set into a wooded ravine garden"
             fill
-            className="object-cover brightness-75"
+            className="object-cover object-[50%_55%]"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/45 to-black/65" />
         </div>
-        <div className="relative container mx-auto h-full flex items-center px-4">
+        <div className="relative container mx-auto px-4">
           <div className="max-w-2xl text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <Eyebrow className="mb-6 text-white/80">Design</Eyebrow>
+            <h1 className="font-display text-4xl font-light leading-[1.12] md:text-5xl lg:text-6xl">
               Landscape Design
             </h1>
-            <p className="text-lg md:text-xl text-white/90">
-              Custom designs that blend functionality with natural beauty, from concept to reality.
+            <p className="mt-8 max-w-xl text-lg font-light text-white/85 md:text-xl">
+              Your property has remarkable potential. We design and build cohesive outdoor spaces
+              that reflect how you live and elevate your home.
             </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Button size="lg" className={primaryBtn} asChild>
+                <Link href="/quote">Book a Design Consultation</Link>
+              </Button>
+              <Button size="lg" className={heroOutlineBtn} asChild>
+                <Link href="/portfolio">
+                  See Our Work
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Service Description */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* ============ PROCESS ============ */}
+      <section className="bg-cream py-24 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-muted-foreground mb-8">
-              Your outdoor space has incredible potential. Whether you're starting from scratch or
-              reimagining an existing landscape, our design team creates customized solutions that
-              reflect your style while enhancing your property's natural beauty. We consider every
-              detail—from plant selection to hardscape integration—to create cohesive, stunning
-              outdoor environments.
-            </p>
+          <SectionHeading
+            eyebrow="How We Work"
+            title="From First Sketch To Final Planting"
+            intro="Whether you are starting from scratch or reimagining an existing landscape, we guide you through a clear, considered process from concept to completion."
+          />
+          <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step) => (
+              <div key={step.n} className={`${floatingCard} p-8`}>
+                <span className="font-display text-4xl font-light text-clay">{step.n}</span>
+                <h3 className="mt-4 font-display text-xl font-normal">{step.title}</h3>
+                <p className="mt-3 leading-relaxed text-foreground/70">{step.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <h2 className="text-3xl font-bold mb-8">Our Design Process:</h2>
+      {/* ============ WHAT WE DESIGN ============ */}
+      <section className="bg-stone py-24 md:py-32">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            eyebrow="What We Design"
+            title="Considered Down To The Last Detail"
+            intro="Every element is chosen to work as one, from plant selection to hardscape integration."
+          />
+          <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {designServices.map((service) => (
+              <div key={service.title} className={`${floatingCard} p-6`}>
+                <span className="flex h-11 w-11 items-center justify-center rounded-sm bg-sage/10 text-sage transition-colors group-hover:bg-sage group-hover:text-white">
+                  <Check className="h-5 w-5" strokeWidth={1.75} />
+                </span>
+                <h3 className="mt-5 font-display text-lg font-normal">{service.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/70">{service.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="grid gap-6 mb-12">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground font-bold flex-shrink-0">
-                      1
-                    </div>
-                    <span>Initial Consultation</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    We meet with you on-site to understand your vision, assess your property, discuss
-                    budget, and identify any challenges or opportunities in your landscape.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground font-bold flex-shrink-0">
-                      2
-                    </div>
-                    <span>Concept Development</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Our designers create initial concepts including layout plans, plant palettes, and
-                    hardscape ideas. We present mood boards and sketches to ensure we're aligned on
-                    style.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground font-bold flex-shrink-0">
-                      3
-                    </div>
-                    <span>Detailed Design & Approval</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    We refine the design based on your feedback, creating detailed plans with
-                    specifications for plants, materials, grading, and irrigation. You approve the
-                    final design before we begin.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground font-bold flex-shrink-0">
-                      4
-                    </div>
-                    <span>Installation</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Our experienced crew brings your design to life with meticulous attention to
-                    detail. We manage every phase of installation, keeping you informed throughout the
-                    process.
-                  </p>
-                </CardContent>
-              </Card>
+      {/* ============ WHY OUR DESIGNS STAND OUT (two-column) ============ */}
+      <section className="bg-wheat py-24 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
+            <div className="relative h-[460px] overflow-hidden rounded-sm lg:order-last">
+              <Image
+                src="/project-photos/IMG_4043.JPEG"
+                alt="Custom designed planting bed with layered shrubs and mature trees"
+                fill
+                className="object-cover"
+              />
             </div>
-
-            <h2 className="text-3xl font-bold mb-8">Design Services Include:</h2>
-
-            <div className="grid gap-6 md:grid-cols-2 mb-12">
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Garden Bed Design</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Beautiful plantings with year-round interest and color
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Tree & Shrub Selection</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Structural plants chosen for your climate and conditions
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Perennial Gardens</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Low-maintenance gardens that return year after year
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Outdoor Living Spaces</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Integrate patios, fire pits, and seating areas seamlessly
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Privacy Screening</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Natural barriers using hedges, trees, and strategic planting
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Water Features</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Fountains, ponds, and streams that add tranquility
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Lighting Design</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Enhance beauty and safety with strategic outdoor lighting
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold mb-1">Drainage Solutions</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Solve water issues while maintaining aesthetic appeal
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-secondary rounded-2xl p-8 md:p-12">
-              <h3 className="text-2xl font-bold mb-4">Why Our Designs Stand Out</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    Designs tailored to Niagara's unique climate and growing conditions
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    Balance of aesthetics, functionality, and maintenance requirements
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    Sustainable practices and native plant integration
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    Comprehensive plans that can be installed in phases if desired
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    One team from design through installation ensures vision becomes reality
-                  </span>
-                </li>
+            <div>
+              <Eyebrow className="mb-5">Why Our Designs Stand Out</Eyebrow>
+              <h2 className="font-display text-3xl font-light leading-[1.2] md:text-4xl">
+                Beautiful, And Built To Live In
+              </h2>
+              <ul className="mt-8 space-y-4">
+                {whyStandOut.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check className="mt-1 h-5 w-5 flex-shrink-0 text-sage" strokeWidth={1.75} />
+                    <span className="text-lg leading-relaxed text-foreground/70">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+      {/* ============ GALLERY ============ */}
+      <section className="bg-moss py-24 md:py-32">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            eyebrow="Design Gallery"
+            title="A Few Of Our Designs"
+            intro="From private garden retreats to natural stonework, every space is designed as a whole."
+          />
+          <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {gallery.map((img) => (
+              <div key={img.src} className="group relative aspect-[4/3] overflow-hidden rounded-sm">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ CTA (deep green band) ============ */}
+      <section className="bg-brand py-20 text-white md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let's Design Your Dream Landscape
+          <Eyebrow className="mb-5 text-clay-soft">Ready When You Are</Eyebrow>
+          <h2 className="mx-auto max-w-2xl font-display text-3xl font-light leading-[1.2] md:text-4xl">
+            Let&apos;s Design Your Dream Landscape
           </h2>
-          <p className="text-lg md:text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Schedule a consultation to discuss your vision. We'll create a custom design that
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/80">
+            Book a consultation to talk through your vision. We&apos;ll create a custom design that
             transforms your outdoor space.
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/quote">
-              Schedule a Design Consultation
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="mt-9">
+            <Button size="lg" className={whiteBtn} asChild>
+              <Link href="/quote">Schedule a Design Consultation</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

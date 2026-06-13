@@ -21,11 +21,15 @@ interface ProjectCarouselProps {
 }
 
 const defaultProjects: Project[] = [
-  { src: '/project-photos/IMG_4140.JPEG', alt: 'Professional lawn with perfect stripes', caption: 'Weekly Lawn Care' },
-  { src: '/project-photos/IMG_3760.JPEG', alt: 'Manicured front lawn', caption: 'Residential Lawn Maintenance' },
-  { src: '/project-photos/2707940586657463592.jpg', alt: 'Elegant front entry landscaping', caption: 'Landscape Design' },
-  { src: '/project-photos/IMG_4043.JPEG', alt: 'Curved garden bed with shrubs', caption: 'Garden Bed Installation' },
-  { src: '/project-photos/IMG_3838.JPEG', alt: 'Private garden sanctuary with bench and boulder', caption: 'Private Garden Sanctuary' },
+  { src: '/project-photos/IMG_6615.JPEG', alt: 'Composite deck and stone steps in a wooded ravine garden', caption: 'Backyard Deck & Stonework' },
+  { src: '/project-photos/2.png', alt: 'Interlocking-stone patio framed by privacy cedars', caption: 'Interlock Patio & Outdoor Living' },
+  { src: '/project-photos/IMG_3843.JPEG', alt: 'Upscale front entry with paver walkway and Japanese maple', caption: 'Front Entry Landscaping' },
+  { src: '/project-photos/2707940586657463592.jpg', alt: 'Garden illuminated with landscape lighting at dusk', caption: 'Landscape Lighting' },
+  { src: '/project-photos/IMG_0866.jpeg', alt: 'Bespoke stone entry walkway', caption: 'Stone Walkway & Entrance' },
+  { src: '/project-photos/IMG_3839.JPEG', alt: 'Layered garden beds in full seasonal bloom', caption: 'Seasonal Garden Beds' },
+  { src: '/project-photos/IMG_4322.JPEG', alt: 'Grand home with an immaculate striped front lawn', caption: 'Lawn Care & Maintenance' },
+  { src: '/project-photos/IMG_6586.JPEG', alt: 'Lush deck garden framed by mature plantings', caption: 'Deck & Outdoor Living' },
+  { src: '/project-photos/IMG_3838.JPEG', alt: 'Private garden retreat with bench and natural boulder', caption: 'Private Garden Retreat' },
 ];
 
 export function ProjectCarousel({ projects = defaultProjects }: ProjectCarouselProps) {

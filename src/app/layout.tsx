@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -18,6 +18,14 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Fine, high-contrast display serif for elegant headings (see globals.css --font-display).
+const cormorant = Cormorant_Garamond({
+  variable: "--font-display-serif",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -50,10 +58,10 @@ export const metadata: Metadata = {
     description: "Transform your outdoor space with professional lawn care, landscape design, and hardscaping services across the Niagara Region.",
     images: [
       {
-        url: "/images/generated/hero-backyard-patio-sunset.png",
+        url: "/project-photos/1.png",
         width: 1200,
         height: 630,
-        alt: "GreenSweep Niagara - Beautiful landscaped backyard",
+        alt: "GreenSweep Niagara - Upscale landscaped property",
       },
     ],
   },
@@ -61,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "GreenSweep Niagara | Premium Landscaping Services",
     description: "Transform your outdoor space with professional lawn care, landscape design, and hardscaping services across the Niagara Region.",
-    images: ["/images/generated/hero-backyard-patio-sunset.png"],
+    images: ["/project-photos/1.png"],
   },
   robots: {
     index: true,
@@ -224,7 +232,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} antialiased`}
       >
         <QueryProvider>
           <ThemeProvider

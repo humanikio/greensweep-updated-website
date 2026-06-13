@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '$25 Off Your First Mow — Weekly Lawn Care in Niagara',
+  title: '$25 Off Your First Mow | Weekly Lawn Care in Niagara',
   description:
     'Get $25 off your first professional mow. Fast 48-hour service, neighbourhood savings, and reliable weekly lawn care across the Niagara Region.',
   openGraph: {
-    title: '$25 Off Your First Mow — Weekly Lawn Care | GreenSweep Niagara',
+    title: '$25 Off Your First Mow | Weekly Lawn Care | GreenSweep Niagara',
     description:
       'Get $25 off your first professional mow. Fast 48-hour service, neighbourhood savings, and reliable weekly lawn care across the Niagara Region.',
     url: 'https://greensweepniagara.com/weekly-mowing',

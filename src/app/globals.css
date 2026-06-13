@@ -5,55 +5,55 @@ All colors MUST be HSL.
 */
 
 :root {
-  /* Clean white background with dark green text */
-  --background: 0 0% 100%;
-  --foreground: 148 40% 18%;
+  /* Forest & Brass: warm off-white background, espresso text */
+  --background: 44 33% 97%;
+  --foreground: 42 14% 13%;
 
-  /* Clean white cards with dark green text */
+  /* Clean white cards (pop against the warm background) */
   --card: 0 0% 100%;
-  --card-foreground: 148 40% 18%;
+  --card-foreground: 42 14% 13%;
 
-  /* Popovers with white background */
+  /* Popovers */
   --popover: 0 0% 100%;
-  --popover-foreground: 148 40% 18%;
+  --popover-foreground: 42 14% 13%;
 
-  /* Primary: Dark green from logo #236341 */
-  --primary: 148 48% 26%;
+  /* Primary: deep forest anchor (#14372a) */
+  --primary: 158 47% 15%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Light green tinted background */
-  --secondary: 140 25% 94%;
-  --secondary-foreground: 148 48% 20%;
+  /* Secondary: warm tan tinted background */
+  --secondary: 41 33% 90%;
+  --secondary-foreground: 42 14% 15%;
 
-  /* Muted: Light green-gray with dark green text */
-  --muted: 140 15% 96%;
-  --muted-foreground: 148 30% 35%;
+  /* Muted: warm light neutral */
+  --muted: 42 28% 94%;
+  --muted-foreground: 40 8% 40%;
 
-  /* Accent: Light green from logo #63ab57 */
-  --accent: 111 35% 50%;
+  /* Accent: brass (#a07c42) */
+  --accent: 37 42% 44%;
   --accent-foreground: 0 0% 100%;
 
   /* Destructive: Clean red */
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle green-gray */
-  --border: 140 15% 88%;
-  --input: 140 15% 88%;
-  --ring: 148 48% 26%;
+  /* Borders: warm neutral */
+  --border: 40 16% 85%;
+  --input: 40 16% 85%;
+  --ring: 37 42% 44%;
 
-  /* Slightly more rounded for organic feel */
-  --radius: 0.5rem;
+  /* Crisper corners to match the homepage's elegant rounded style */
+  --radius: 0.25rem;
 
-  /* Sidebar: Clean white with dark text */
+  /* Sidebar */
   --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 148 48% 20%;
-  --sidebar-primary: 148 48% 26%;
+  --sidebar-foreground: 42 14% 13%;
+  --sidebar-primary: 158 47% 15%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 111 35% 50%;
+  --sidebar-accent: 37 42% 44%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-border: 140 15% 88%;
-  --sidebar-ring: 148 48% 26%;
+  --sidebar-border: 40 16% 85%;
+  --sidebar-ring: 37 42% 44%;
 }
 
 .dark {
@@ -66,7 +66,7 @@ All colors MUST be HSL.
   --popover: 150 20% 8%;
   --popover-foreground: 140 20% 95%;
 
-  --primary: 111 35% 50%;
+  --primary: 37 48% 56%;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 150 15% 15%;
@@ -75,7 +75,7 @@ All colors MUST be HSL.
   --muted: 150 15% 15%;
   --muted-foreground: 140 15% 65%;
 
-  --accent: 148 48% 26%;
+  --accent: 158 40% 24%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 62.8% 30.6%;
@@ -83,22 +83,42 @@ All colors MUST be HSL.
 
   --border: 150 15% 18%;
   --input: 150 15% 18%;
-  --ring: 111 35% 50%;
+  --ring: 37 48% 56%;
   --sidebar-background: 150 20% 8%;
   --sidebar-foreground: 140 20% 95%;
-  --sidebar-primary: 111 35% 50%;
+  --sidebar-primary: 37 48% 56%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 148 48% 26%;
+  --sidebar-accent: 158 40% 24%;
   --sidebar-accent-foreground: 0 0% 100%;
   --sidebar-border: 150 15% 18%;
-  --sidebar-ring: 111 35% 50%;
+  --sidebar-ring: 37 48% 56%;
 }
 
 @theme {
   --container: 1400px;
   --container-center: true;
   --container-padding: 2rem;
-  
+
+  /* Brand palette + display font (additive — used on the homepage only this pass).
+     Deep green #123a1e, warm light grey #e8e7e3, muted sage accent. */
+  --font-display: var(--font-display-serif), Georgia, serif;
+  --color-brand: #14372a;  /* deep forest, used only as the dark anchor */
+  --color-brand-foreground: #ffffff;
+  --color-sand: #e8e7e3;
+  --color-sage: #a07c42;   /* brass accent on light sections (icons, eyebrows) */
+
+  /* "Forest & Brass" palette: deep green appears only as the dark anchor; the
+     large light sections are warm bone/greige neutrals (no more light green);
+     brass is the single refined accent. All light tones keep enough contrast
+     for dark espresso/green body text. */
+  --color-cream: #f5f1e8;  /* bone — lightest field */
+  --color-wheat: #eae2d2;  /* warm tan */
+  --color-stone: #e1d8c7;  /* warm taupe */
+  --color-moss: #ece6d8;   /* warm neutral — replaces the old light green */
+  --color-forest: #1c4534; /* gradient partner for depth on the dark anchor */
+  --color-clay: #a07c42;   /* brass accent */
+  --color-clay-soft: #c7a063; /* lighter brass for accents on dark sections */
+
   /* Color System */
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
@@ -177,26 +197,24 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Professional, bold typography for landscaping brand */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: inherit;
-  line-height: 1.2;
-}
+/* Default heading typography. Kept in @layer base so Tailwind utility classes
+   (e.g. font-light, font-normal, tracking-*) reliably override it — unlayered
+   rules would beat the utilities layer regardless of specificity. */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: inherit;
+    line-height: 1.2;
+  }
 
-h1 {
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
+  h1 {
+    font-weight: 700;
+  }
 
-h2 {
-  font-weight: 700;
-}
-
-/* Clean button styles */
-button {
-  font-weight: 500;
+  button {
+    font-weight: 500;
+  }
 }
 
 /* Subtle shadows for depth */
@@ -210,4 +228,11 @@ button {
 
 .shadow-md {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Subtle film/paper grain texture, used as a low-opacity overlay on occasional
+   sections for depth. Tileable fractal-noise SVG so there is no extra request. */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
 }

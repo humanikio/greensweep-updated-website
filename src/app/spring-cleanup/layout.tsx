@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '10% Off Spring Cleanup + Mulch Bundle — GreenSweep Niagara',
+  title: '10% Off Spring Cleanup + Mulch Bundle | GreenSweep Niagara',
   description:
-    'Save 10% when you bundle spring cleanup with mulch. Includes yard cleanup, trimming, edging, and fresh mulch — book before May 20 across the Niagara Region.',
+    'Save 10% when you bundle spring cleanup with mulch. Includes yard cleanup, trimming, edging, and fresh mulch. Book before May 20 across the Niagara Region.',
   openGraph: {
     title: '10% Off Spring Cleanup + Mulch Bundle | GreenSweep Niagara',
     description:
-      'Save 10% when you bundle spring cleanup with mulch. Includes yard cleanup, trimming, edging, and fresh mulch — book before May 20 across the Niagara Region.',
+      'Save 10% when you bundle spring cleanup with mulch. Includes yard cleanup, trimming, edging, and fresh mulch. Book before May 20 across the Niagara Region.',
     url: 'https://greensweepniagara.com/spring-cleanup',
     images: [
       {

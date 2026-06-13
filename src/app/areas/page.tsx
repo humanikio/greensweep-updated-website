@@ -2,235 +2,228 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, MapPin, Phone } from 'lucide-react';
 import { locations } from '@/data/locations';
+import {
+  Eyebrow,
+  SectionHeading,
+  primaryBtn,
+  heroOutlineBtn,
+  whiteBtn,
+  lightOutlineBtn,
+  arrowLink,
+  floatingCard,
+} from '@/components/site-ui';
 
 export const metadata: Metadata = {
   title: 'Service Areas | Landscaping Across Niagara Region | GreenSweep Niagara',
   description:
-    'GreenSweep Niagara provides professional landscaping services throughout the Niagara Region including Niagara-on-the-Lake, St. Catharines, Grimsby, Fonthill, and more.',
+    'GreenSweep Niagara provides professional landscaping throughout the Niagara Region including Niagara-on-the-Lake, St. Catharines, Grimsby, Fonthill, and more.',
 };
+
+const regionGroups = [
+  {
+    title: 'Niagara Region',
+    cities: [
+      'St. Catharines',
+      'Niagara Falls',
+      'Niagara-on-the-Lake',
+      'Welland',
+      'Thorold',
+      'Fort Erie',
+    ],
+  },
+  {
+    title: 'West Niagara',
+    cities: ['Grimsby', 'Beamsville', 'Lincoln', 'Vineland', 'Jordan', 'Smithville'],
+  },
+  {
+    title: 'Pelham & Area',
+    cities: ['Fonthill', 'Fenwick', 'Ridgeville', 'Port Dalhousie', 'Port Weller', 'Port Colborne'],
+  },
+];
+
+const whyLocal = [
+  {
+    title: 'We Know Niagara',
+    body: 'Born and raised here, we understand the local climate, soil, and landscaping challenges, from lake-effect weather to clay-heavy soils. We know what works.',
+  },
+  {
+    title: 'Fast Response Times',
+    body: 'Being local means we are never far away. Whether it is storm cleanup or a same-week consultation, we can be there quickly.',
+  },
+  {
+    title: 'Community Investment',
+    body: 'Hiring GreenSweep supports a local business that reinvests in our community. We live here, work here, and take pride in our region.',
+  },
+  {
+    title: 'Reputation Matters',
+    body: 'In a tight-knit region like Niagara, reputation is everything. We earn repeat customers and referrals through exceptional, honest work.',
+  },
+];
 
 export default function AreasPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-primary text-primary-foreground">
-        <div className="absolute inset-0 opacity-10">
+      {/* ============ HERO ============ */}
+      <section className="relative flex min-h-[55vh] items-center md:min-h-[65vh]">
+        <div className="absolute inset-0">
           <Image
-            src="/images/generated/pristine-lawn-garden-beds.png"
-            alt=""
+            src="/project-photos/IMG_3759.JPEG"
+            alt="Upscale Niagara home with an immaculate striped front lawn"
             fill
-            className="object-cover"
+            className="object-cover object-[50%_55%]"
+            priority
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/45 to-black/65" />
         </div>
         <div className="relative container mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 px-4 py-2 rounded-full mb-6">
-            <MapPin className="h-5 w-5" />
-            <span className="text-sm font-medium">Service Areas</span>
+          <div className="mx-auto max-w-3xl text-white">
+            <Eyebrow className="mb-6 text-white/80">Service Areas</Eyebrow>
+            <h1 className="font-display text-4xl font-light leading-[1.12] md:text-5xl lg:text-6xl">
+              Proudly Serving The Niagara Region
+            </h1>
+            <p className="mx-auto mt-8 max-w-2xl text-lg font-light text-white/85 md:text-xl">
+              From the historic streets of Niagara-on-the-Lake to the waterfront communities of
+              Grimsby and Port Dalhousie, we bring our work to homeowners across the region.
+            </p>
+            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+              <Button size="lg" className={primaryBtn} asChild>
+                <Link href="/quote">Get a Free Quote</Link>
+              </Button>
+              <Button size="lg" className={heroOutlineBtn} asChild>
+                <a href="tel:9059318022">
+                  <Phone className="mr-2 h-4 w-4" />
+                  (905) 931-8022
+                </a>
+              </Button>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Proudly Serving the Niagara Region
-          </h1>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
-            From the historic streets of Niagara-on-the-Lake to the waterfront communities of
-            Grimsby and Port Dalhousie, GreenSweep Niagara brings professional landscaping
-            services to homeowners across the region.
-          </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/quote">
-              Get Free Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
         </div>
       </section>
 
-      {/* Areas Grid */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* ============ AREAS GRID ============ */}
+      <section className="bg-cream py-24 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Service Areas</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Click on any area to learn more about the landscaping services we offer in your
-              community.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          <SectionHeading
+            eyebrow="Explore By Community"
+            title="Our Service Areas"
+            intro="Select your community to learn more about the landscaping services we offer there."
+          />
+          <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
             {locations.map((location) => (
-              <Link key={location.slug} href={`/areas/${location.slug}`} className="group">
-                <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 hover:border-accent">
-                  <CardHeader>
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="p-2 bg-accent/10 rounded-lg text-accent">
-                        <MapPin className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-xl group-hover:text-accent transition-colors">
-                          {location.name}
-                        </CardTitle>
-                        <CardDescription>{location.region}</CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">{location.tagline}</p>
-                    {location.neighborhoods && (
-                      <div className="flex flex-wrap gap-2">
-                        {location.neighborhoods.slice(0, 3).map((neighborhood, index) => (
-                          <span
-                            key={index}
-                            className="text-xs px-2 py-1 bg-secondary rounded-full"
-                          >
-                            {neighborhood}
-                          </span>
-                        ))}
-                        {location.neighborhoods.length > 3 && (
-                          <span className="text-xs px-2 py-1 bg-secondary rounded-full">
-                            +{location.neighborhoods.length - 3} more
-                          </span>
-                        )}
-                      </div>
+              <Link key={location.slug} href={`/areas/${location.slug}`} className={`${floatingCard} block p-8`}>
+                <div className="flex items-center gap-4">
+                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-sm bg-sage/10 text-sage transition-colors group-hover:bg-sage group-hover:text-white">
+                    <MapPin className="h-5 w-5" strokeWidth={1.5} />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-xl font-normal transition-colors group-hover:text-brand">
+                      {location.name}
+                    </h3>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                      {location.region}
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-5 leading-relaxed text-foreground/70">{location.tagline}</p>
+                {location.neighborhoods && (
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {location.neighborhoods.slice(0, 3).map((neighborhood, index) => (
+                      <span
+                        key={index}
+                        className="rounded-sm bg-cream px-2.5 py-1 text-xs text-foreground/70"
+                      >
+                        {neighborhood}
+                      </span>
+                    ))}
+                    {location.neighborhoods.length > 3 && (
+                      <span className="rounded-sm bg-cream px-2.5 py-1 text-xs text-foreground/70">
+                        +{location.neighborhoods.length - 3} more
+                      </span>
                     )}
-                    <div className="mt-4 flex items-center text-accent font-medium group-hover:gap-2 transition-all">
-                      Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                    </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                )}
+                <span className={`${arrowLink} mt-6`}>
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Map Section Placeholder */}
-      <section className="py-16 md:py-24 bg-secondary">
+      {/* ============ FULL COVERAGE (region columns) ============ */}
+      <section className="bg-stone py-24 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Serving the Entire Niagara Region</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Our team proudly serves homeowners from Grimsby to Niagara-on-the-Lake, and everywhere
-              in between. Not sure if we service your area? Give us a call!
-            </p>
-
-            <div className="grid gap-4 md:grid-cols-3 text-left mb-8">
-              <div className="p-4 bg-background rounded-lg">
-                <h3 className="font-semibold mb-2">Niagara Region</h3>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>St. Catharines</li>
-                  <li>Niagara Falls</li>
-                  <li>Niagara-on-the-Lake</li>
-                  <li>Welland</li>
-                  <li>Thorold</li>
-                  <li>Fort Erie</li>
+          <SectionHeading
+            eyebrow="Full Coverage"
+            title="Serving The Entire Niagara Region"
+            intro="From Grimsby to Niagara-on-the-Lake and everywhere in between. Not sure if we cover your area? Just give us a call."
+          />
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+            {regionGroups.map((group) => (
+              <div key={group.title} className="rounded-sm border border-brand/10 bg-white p-8 shadow-sm">
+                <h3 className="font-display text-xl font-normal">{group.title}</h3>
+                <ul className="mt-5 space-y-3">
+                  {group.cities.map((city) => (
+                    <li key={city} className="flex items-center gap-3">
+                      <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-clay" />
+                      <span className="text-foreground/75">{city}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className="p-4 bg-background rounded-lg">
-                <h3 className="font-semibold mb-2">West Niagara</h3>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>Grimsby</li>
-                  <li>Beamsville</li>
-                  <li>Lincoln</li>
-                  <li>Vineland</li>
-                  <li>Jordan</li>
-                  <li>Smithville</li>
-                </ul>
-              </div>
-              <div className="p-4 bg-background rounded-lg">
-                <h3 className="font-semibold mb-2">Pelham & Area</h3>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>Fonthill</li>
-                  <li>Fenwick</li>
-                  <li>Ridgeville</li>
-                  <li>Port Dalhousie</li>
-                  <li>Port Weller</li>
-                  <li>Port Colborne</li>
-                </ul>
-              </div>
-            </div>
-
-            <Button size="lg" asChild>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Button size="lg" className={primaryBtn} asChild>
               <a href="tel:9059318022">
-                <Phone className="mr-2 h-5 w-5" />
-                Call to Confirm Service Area
+                <Phone className="mr-2 h-4 w-4" />
+                Call to Confirm Your Area
               </a>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Why Local Matters */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* ============ WHY LOCAL ============ */}
+      <section className="bg-wheat py-24 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Why Choose a Local Landscaper?
-            </h2>
-
-            <div className="grid gap-8 md:grid-cols-2">
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">We Know Niagara</h3>
-                <p className="text-muted-foreground">
-                  Born and raised in the Niagara Region, we understand the unique climate, soil
-                  conditions, and landscaping challenges that local homeowners face. From the lake
-                  effect weather to the clay-heavy soils, we know what works here.
-                </p>
+          <SectionHeading
+            eyebrow="Why Local Matters"
+            title="The Advantage Of A Local Landscaper"
+            intro="Choosing a Niagara company means more than convenience."
+          />
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+            {whyLocal.map((item) => (
+              <div key={item.title} className="rounded-sm border border-brand/10 bg-white p-8 shadow-sm">
+                <h3 className="font-display text-xl font-normal">{item.title}</h3>
+                <p className="mt-3 leading-relaxed text-foreground/70">{item.body}</p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">Fast Response Times</h3>
-                <p className="text-muted-foreground">
-                  Being local means we're never far away. Whether you need emergency cleanup after
-                  a storm or want to schedule a same-week consultation, we can be there quickly.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">Community Investment</h3>
-                <p className="text-muted-foreground">
-                  When you hire GreenSweep Niagara, you're supporting a local business that
-                  reinvests in our community. We live here, work here, and take pride in making
-                  our region more beautiful.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">Reputation Matters</h3>
-                <p className="text-muted-foreground">
-                  In a tight-knit region like Niagara, our reputation is everything. We earn repeat
-                  customers and referrals by delivering exceptional results and honest service,
-                  every single time.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+      {/* ============ CTA (deep green band) ============ */}
+      <section className="bg-brand py-20 text-white md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Outdoor Space?
+          <Eyebrow className="mb-5 text-clay-soft">Ready When You Are</Eyebrow>
+          <h2 className="mx-auto max-w-2xl font-display text-3xl font-light leading-[1.2] md:text-4xl">
+            Ready To Transform Your Outdoor Space?
           </h2>
-          <p className="text-lg md:text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            No matter where you are in the Niagara Region, we're ready to help you create the
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/80">
+            No matter where you are in the Niagara Region, we&apos;re ready to help you create the
             outdoor space of your dreams.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
-              <Link href="/quote">
-                Get Your Free Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+            <Button size="lg" className={whiteBtn} asChild>
+              <Link href="/quote">Get Your Free Quote</Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white border-white/30 text-primary hover:bg-white/90"
-              asChild
-            >
+            <Button size="lg" className={lightOutlineBtn} asChild>
               <a href="tel:9059318022">
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 h-4 w-4" />
                 (905) 931-8022
               </a>
             </Button>

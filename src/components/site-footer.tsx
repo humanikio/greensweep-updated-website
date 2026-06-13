@@ -16,35 +16,29 @@ export function SiteFooter() {
   }
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+    <footer className="bg-brand text-white/70">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
+            <Link href="/" className="mb-5 inline-block rounded-sm bg-[#e8e7e3] px-4 py-3">
               <Image
-                src="/images/greensweep-logo.png"
-                alt="GreenSweep Niagara"
-                width={40}
-                height={40}
-                className="h-10 w-10 brightness-0 invert"
+                src="/GreenSweep-New-Logo.jpg"
+                alt="GreenSweep Landscaping"
+                width={2000}
+                height={1000}
+                className="h-9 w-auto md:h-10"
               />
-              <span className="font-bold text-lg uppercase">
-                GreenSweep
-                <br />
-                Niagara
-              </span>
             </Link>
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Premium landscaping services across the Niagara Region. Transform your outdoor space
-              into a natural paradise.
+            <p className="mb-6 text-sm leading-relaxed text-white/65">
+              Bespoke landscaping and outdoor living for the finest homes across the Niagara Region.
             </p>
             <div className="flex gap-4">
               <a
                 href="https://facebook.com/greensweepniagara"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                className="text-clay-soft transition-colors hover:text-white"
                 aria-label="Follow us on Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -53,7 +47,7 @@ export function SiteFooter() {
                 href="https://instagram.com/greensweepniagara"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                className="text-clay-soft transition-colors hover:text-white"
                 aria-label="Follow us on Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -63,12 +57,12 @@ export function SiteFooter() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-clay-soft">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/services"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Our Services
                 </Link>
@@ -76,7 +70,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/portfolio"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Portfolio
                 </Link>
@@ -84,7 +78,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/about"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   About Us
                 </Link>
@@ -92,7 +86,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Contact
                 </Link>
@@ -100,7 +94,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/faq"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   FAQ
                 </Link>
@@ -108,7 +102,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/quote"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Get a Quote
                 </Link>
@@ -118,12 +112,12 @@ export function SiteFooter() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Services</h3>
+            <h3 className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-clay-soft">Services</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/services/lawn-care"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Lawn Care & Maintenance
                 </Link>
@@ -131,7 +125,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/services/landscape-design"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Landscape Design
                 </Link>
@@ -139,7 +133,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/services/hardscaping"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Hardscaping & Stonework
                 </Link>
@@ -149,12 +143,12 @@ export function SiteFooter() {
 
           {/* Service Areas */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Service Areas</h3>
+            <h3 className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-clay-soft">Service Areas</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/areas/niagara-on-the-lake"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Niagara-on-the-Lake
                 </Link>
@@ -162,7 +156,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/areas/st-catharines"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   St. Catharines
                 </Link>
@@ -170,7 +164,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/areas/fonthill"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Fonthill
                 </Link>
@@ -178,7 +172,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/areas/grimsby"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Grimsby
                 </Link>
@@ -186,7 +180,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/areas/port-dalhousie"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   Port Dalhousie
                 </Link>
@@ -194,7 +188,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/areas"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   View All Areas →
                 </Link>
@@ -204,34 +198,34 @@ export function SiteFooter() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+            <h3 className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-clay-soft">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
-                <Phone className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <Phone className="h-5 w-5 mt-0.5 flex-shrink-0 text-clay-soft" />
                 <div>
                   <a
                     href="tel:9059318022"
-                    className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    className="text-sm text-white/65 transition-colors hover:text-white"
                   >
                     (905) 931-8022
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <Mail className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <Mail className="h-5 w-5 mt-0.5 flex-shrink-0 text-clay-soft" />
                 <div>
                   <a
                     href="mailto:greensweepniagara@gmail.com"
-                    className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    className="text-sm text-white/65 transition-colors hover:text-white"
                   >
                     greensweepniagara@gmail.com
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-clay-soft" />
                 <div>
-                  <span className="text-sm text-primary-foreground/80">
+                  <span className="text-sm text-white/65">
                     Serving the Niagara Region
                     <br />
                     Ontario, Canada
@@ -242,21 +236,21 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-primary-foreground/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-primary-foreground/60">
-              © {new Date().getFullYear()} GreenSweep Niagara. All rights reserved.
+        <div className="mt-12 border-t border-white/15 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+            <p className="text-sm text-white/50">
+              © {new Date().getFullYear()} GreenSweep Landscaping. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link
                 href="/privacy"
-                className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                className="text-sm text-white/50 transition-colors hover:text-white"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                className="text-sm text-white/50 transition-colors hover:text-white"
               >
                 Terms of Service
               </Link>

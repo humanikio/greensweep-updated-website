@@ -4,9 +4,33 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Phone, Menu, X, Scissors } from 'lucide-react';
+import { Phone, Menu, X, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { isBareLandingRoute } from '@/lib/landing-routes';
+
+const navLinks = [
+  { href: '/services', label: 'Services' },
+  { href: '/areas', label: 'Areas' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const navLinkClass =
+  'text-xs font-medium uppercase tracking-[0.15em] text-brand/70 transition-colors hover:text-brand';
+
+function Logo({ className = 'h-12 w-auto md:h-14' }: { className?: string }) {
+  return (
+    <Image
+      src="/GreenSweep-New-Logo.jpg"
+      alt="GreenSweep Landscaping"
+      width={2000}
+      height={1000}
+      priority
+      className={className}
+    />
+  );
+}
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -16,96 +40,58 @@ export function SiteHeader() {
   // are no nav links to leave the page. The only conversion path is the form.
   if (isBareLandingRoute(pathname)) {
     return (
-      <header className="w-full border-b bg-white">
-        <div className="container mx-auto flex h-16 items-center px-4">
-          <div className="flex items-center gap-2 text-xl font-bold tracking-tight">
-            <Image
-              src="/images/greensweep-logo.png"
-              alt="GreenSweep Niagara"
-              width={40}
-              height={40}
-              className="h-10 w-10"
-            />
-            <span className="uppercase text-primary">GreenSweep Niagara</span>
-          </div>
+      <header className="w-full border-b border-brand/10 bg-sand">
+        <div className="container mx-auto flex h-20 items-center px-4">
+          <Logo />
         </div>
       </header>
     );
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header className="sticky top-0 z-50 w-full border-b border-brand/10 bg-sand">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight">
-          <Image
-            src="/images/greensweep-logo.png"
-            alt="GreenSweep Niagara"
-            width={40}
-            height={40}
-            className="h-10 w-10"
-          />
-          <span className="text-primary uppercase">GreenSweep Niagara</span>
+        <Link href="/" className="flex items-center" aria-label="GreenSweep Landscaping home">
+          <Logo />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden items-center gap-9 md:flex">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className={navLinkClass}>
+              {link.label}
+            </Link>
+          ))}
           <Link
-            href="/services"
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            href="/outdoor-living"
+            className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.15em] text-sage transition-colors hover:text-brand"
           >
-            Services
-          </Link>
-          <Link
-            href="/areas"
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Areas
-          </Link>
-          <Link
-            href="/portfolio"
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Portfolio
-          </Link>
-          <Link
-            href="/about"
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            About Us
-          </Link>
-          <Link
-            href="/contact"
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Contact
-          </Link>
-          <Link
-            href="/spring-cleanup"
-            className="flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
-          >
-            <Scissors className="h-4 w-4" />
-            Lawn Care Offers
+            <Sparkles className="h-3.5 w-3.5" />
+            Outdoor Living Package
           </Link>
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden items-center gap-6 md:flex">
           <a
             href="tel:9059318022"
-            className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-brand/70 transition-colors hover:text-brand"
           >
-            <Phone className="h-4 w-4" />
+            <Phone className="h-3.5 w-3.5" />
             (905) 931-8022
           </a>
-          <Button asChild className="bg-accent hover:bg-accent/90">
+          <Button
+            asChild
+            className="h-10 rounded-sm bg-brand px-6 text-xs font-medium uppercase tracking-[0.15em] text-white hover:bg-brand/90"
+          >
             <Link href="/quote">Get Free Quote</Link>
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          className="p-2 text-brand md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -115,60 +101,38 @@ export function SiteHeader() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t bg-white">
+        <div className="border-t border-brand/10 bg-sand md:hidden">
           <nav className="container mx-auto flex flex-col px-4 py-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="border-b border-brand/10 py-4 text-xs font-medium uppercase tracking-[0.15em] text-brand/80 transition-colors hover:text-brand"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
-              href="/services"
-              className="py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
+              href="/outdoor-living"
+              className="flex items-center gap-2 border-b border-brand/10 py-4 text-xs font-medium uppercase tracking-[0.15em] text-sage transition-colors hover:text-brand"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Services
+              <Sparkles className="h-3.5 w-3.5" />
+              Outdoor Living Package
             </Link>
-            <Link
-              href="/areas"
-              className="py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Service Areas
-            </Link>
-            <Link
-              href="/portfolio"
-              className="py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="/about"
-              className="py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link
-              href="/contact"
-              className="py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
-            <Link
-              href="/spring-cleanup"
-              className="flex items-center gap-2 py-3 text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Scissors className="h-4 w-4" />
-              Lawn Care Offers
-            </Link>
-            <div className="mt-4 flex flex-col gap-3">
+            <div className="mt-5 flex flex-col gap-3">
               <a
                 href="tel:9059318022"
-                className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className="flex items-center justify-center gap-2 py-2 text-xs font-medium uppercase tracking-[0.12em] text-brand/70 transition-colors hover:text-brand"
               >
-                <Phone className="h-4 w-4" />
+                <Phone className="h-3.5 w-3.5" />
                 (905) 931-8022
               </a>
-              <Button asChild className="bg-accent hover:bg-accent/90 w-full">
+              <Button
+                asChild
+                className="h-11 w-full rounded-sm bg-brand text-xs font-medium uppercase tracking-[0.15em] text-white hover:bg-brand/90"
+              >
                 <Link href="/quote" onClick={() => setMobileMenuOpen(false)}>
                   Get Free Quote
                 </Link>

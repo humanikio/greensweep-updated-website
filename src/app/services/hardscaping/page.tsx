@@ -1,325 +1,275 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ArrowRight } from 'lucide-react';
+import {
+  Eyebrow,
+  SectionHeading,
+  primaryBtn,
+  heroOutlineBtn,
+  whiteBtn,
+  floatingCard,
+} from '@/components/site-ui';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Hardscaping & Stonework | GreenSweep Niagara',
-  description: 'Professional hardscaping services in the Niagara Region. Patios, walkways, retaining walls, and outdoor living spaces built to last.',
+  description:
+    'Hardscaping and stonework across the Niagara Region: patios, walkways, retaining walls, driveways, fire features, and outdoor kitchens, built to last generations.',
 };
+
+const services = [
+  {
+    title: 'Patios & Outdoor Living Areas',
+    body: 'Custom patios in natural stone, interlocking pavers, or stamped concrete, built for entertaining.',
+    items: [
+      'Interlocking stone patios',
+      'Natural flagstone installations',
+      'Stamped concrete designs',
+      'Outdoor kitchen foundations',
+    ],
+  },
+  {
+    title: 'Walkways & Pathways',
+    body: 'Beautiful, functional walkways that guide guests and complement your home’s architecture.',
+    items: [
+      'Front entrance pathways',
+      'Garden pathways',
+      'Stepping-stone installations',
+      'Curved or geometric designs',
+    ],
+  },
+  {
+    title: 'Retaining Walls',
+    body: 'Structurally sound, beautifully crafted walls that solve grading challenges and add interest.',
+    items: [
+      'Engineered block systems',
+      'Natural stone walls',
+      'Tiered wall systems',
+      'Integrated drainage solutions',
+    ],
+  },
+  {
+    title: 'Driveways',
+    body: 'A strong first impression in a durable, attractive driveway designed for Canadian winters.',
+    items: [
+      'Interlocking paver driveways',
+      'Stamped concrete options',
+      'Decorative borders',
+      'Proper drainage integration',
+    ],
+  },
+  {
+    title: 'Fire Pits & Fire Features',
+    body: 'Custom fire features that extend the outdoor season and create a warm gathering space.',
+    items: [
+      'Stone fire pit installations',
+      'Built-in seating walls',
+      'Gas or wood-burning options',
+      'Custom shapes and sizes',
+    ],
+  },
+  {
+    title: 'Outdoor Kitchens',
+    body: 'A fully equipped outdoor kitchen that turns the backyard into an entertainer’s space.',
+    items: [
+      'Built-in grill stations',
+      'Stone countertops',
+      'Bar seating areas',
+      'Storage and prep spaces',
+    ],
+  },
+];
+
+const advantage = [
+  'Premium materials sourced from trusted suppliers',
+  'Proper base preparation for long-lasting results',
+  'Engineered drainage that prevents settling and water damage',
+  'Skilled masons with decades of combined experience',
+  'Workmanship warranty, so you know we stand behind our installations',
+];
+
+const materials = [
+  {
+    title: 'Natural Stone',
+    body: 'Flagstone, limestone, granite, and bluestone, each with timeless beauty and character.',
+  },
+  {
+    title: 'Interlocking Pavers',
+    body: 'Durable and versatile, available in countless colours and patterns.',
+  },
+  {
+    title: 'Retaining Wall Blocks',
+    body: 'Engineered systems designed for both strength and visual appeal.',
+  },
+  {
+    title: 'Decorative Concrete',
+    body: 'Stamped, stained, or polished for a custom look at great value.',
+  },
+];
+
+const gallery = [
+  { src: '/project-photos/IMG_0866.jpeg', alt: 'Bespoke stone entry walkway' },
+  { src: '/project-photos/IMG_5663.JPEG', alt: 'Interlocking paver entry and walkway' },
+  { src: '/project-photos/IMG_6614.JPEG', alt: 'Composite deck and stone steps set into a wooded ravine' },
+  { src: '/project-photos/IMG_5660.JPEG', alt: 'Hand-laid grey paver patio with garden beds' },
+];
 
 export default function HardscapingPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative h-[400px] lg:h-[500px]">
+      {/* ============ HERO ============ */}
+      <section className="relative flex min-h-[60vh] items-center md:min-h-[70vh]">
         <div className="absolute inset-0">
           <Image
-            src="/project-photos/IMG_0866.jpeg"
-            alt="Professional hardscaping and stonework"
+            src="/project-photos/2.png"
+            alt="Interlocking-stone patio framed by tall privacy cedars"
             fill
-            className="object-cover brightness-75"
+            className="object-cover object-[50%_60%]"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/45 to-black/65" />
         </div>
-        <div className="relative container mx-auto h-full flex items-center px-4">
+        <div className="relative container mx-auto px-4">
           <div className="max-w-2xl text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Hardscaping & Stonework
+            <Eyebrow className="mb-6 text-white/80">Hardscaping</Eyebrow>
+            <h1 className="font-display text-4xl font-light leading-[1.12] md:text-5xl lg:text-6xl">
+              Hardscaping &amp; Stonework
             </h1>
-            <p className="text-lg md:text-xl text-white/90">
-              Outdoor living spaces built to last generations with expert craftsmanship.
+            <p className="mt-8 max-w-xl text-lg font-light text-white/85 md:text-xl">
+              Patios, walkways, and outdoor living features, engineered to withstand the Niagara
+              climate and built to look beautiful for decades.
             </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Button size="lg" className={primaryBtn} asChild>
+                <Link href="/quote">Get a Free Quote</Link>
+              </Button>
+              <Button size="lg" className={heroOutlineBtn} asChild>
+                <Link href="/portfolio">
+                  See Our Work
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Service Description */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* ============ SERVICES (floating cards with detail bullets) ============ */}
+      <section className="bg-cream py-24 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-muted-foreground mb-8">
-              Hardscaping transforms your outdoor space into a functional, beautiful extension of
-              your home. From elegant patios to sturdy retaining walls, our expert craftsmen combine
-              technical precision with aesthetic vision to create structures that enhance your
-              property's value and your quality of life. Every project is built to withstand the
-              Niagara climate and look beautiful for decades to come.
-            </p>
+          <SectionHeading
+            eyebrow="What We Build"
+            title="Outdoor Structures, Done Right"
+            intro="Hardscaping turns your property into a functional, beautiful extension of your home. We pair technical precision with design, so every structure adds lasting value."
+          />
+          <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <div key={service.title} className={`${floatingCard} p-8`}>
+                <h3 className="font-display text-xl font-normal">{service.title}</h3>
+                <p className="mt-3 leading-relaxed text-foreground/70">{service.body}</p>
+                <ul className="mt-5 space-y-2.5">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <Check className="mt-1 h-4 w-4 flex-shrink-0 text-sage" strokeWidth={1.75} />
+                      <span className="text-sm text-foreground/70">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <h2 className="text-3xl font-bold mb-8">Our Hardscaping Services:</h2>
-
-            <div className="grid gap-6 md:grid-cols-2 mb-12">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Patios & Outdoor Living Areas</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Create the perfect outdoor entertaining space with custom patio designs using
-                    natural stone, pavers, or stamped concrete.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Interlocking stone patios</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Natural flagstone installations</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Stamped concrete designs</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Outdoor kitchen foundations</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Walkways & Pathways</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Guide visitors through your landscape with beautiful, functional walkways that
-                    complement your home's architecture.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Front entrance pathways</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Garden pathways</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Stepping stone installations</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Curved or geometric designs</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Retaining Walls</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Solve grading challenges while adding visual interest with structurally sound,
-                    beautifully crafted retaining walls.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Engineered block systems</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Natural stone walls</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Tiered wall systems</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Integrated drainage solutions</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Driveways</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Make a strong first impression with a durable, attractive driveway designed to
-                    handle Canadian winters.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Interlocking paver driveways</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Stamped concrete options</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Decorative borders</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Proper drainage integration</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Fire Pits & Fire Features</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Extend your outdoor season with custom fire features that create a warm,
-                    inviting gathering space.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Stone fire pit installations</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Built-in seating walls</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Gas or wood-burning options</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Custom shapes and sizes</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Outdoor Kitchens</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Transform your backyard into an entertainer's paradise with a fully equipped
-                    outdoor kitchen.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Built-in grill stations</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Stone countertops</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Bar seating areas</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">Storage and prep spaces</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+      {/* ============ ADVANTAGE (two-column) ============ */}
+      <section className="bg-wheat py-24 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
+            <div className="relative h-[460px] overflow-hidden rounded-sm">
+              <Image
+                src="/project-photos/IMG_5661.JPEG"
+                alt="Precision-laid interlocking paver patio with clean borders"
+                fill
+                className="object-cover"
+              />
             </div>
-
-            <div className="bg-secondary rounded-2xl p-8 md:p-12 mb-12">
-              <h3 className="text-2xl font-bold mb-4">Our Hardscaping Advantage</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    Premium materials sourced from trusted suppliers
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    Proper base preparation for long-lasting results
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    Engineered drainage to prevent settling and water damage
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    Skilled masons with decades of combined experience
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    Warranty on workmanship—we stand behind our installations
-                  </span>
-                </li>
+            <div>
+              <Eyebrow className="mb-5">Our Advantage</Eyebrow>
+              <h2 className="font-display text-3xl font-light leading-[1.2] md:text-4xl">
+                Built To Outlast The Seasons
+              </h2>
+              <ul className="mt-8 space-y-4">
+                {advantage.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check className="mt-1 h-5 w-5 flex-shrink-0 text-sage" strokeWidth={1.75} />
+                    <span className="text-lg leading-relaxed text-foreground/70">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
-
-            <div className="bg-muted rounded-2xl p-8 md:p-12">
-              <h3 className="text-2xl font-bold mb-4">Material Options</h3>
-              <p className="text-muted-foreground mb-6">
-                We work with a wide variety of materials to match your style and budget:
-              </p>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div>
-                  <h4 className="font-semibold mb-2">Natural Stone</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Flagstone, limestone, granite, bluestone—timeless beauty with unique character
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Interlocking Pavers</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Durable, versatile, available in countless colors and patterns
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Retaining Wall Blocks</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Engineered systems designed for strength and visual appeal
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Decorative Concrete</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Stamped, stained, or polished for a custom look at great value
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+      {/* ============ MATERIAL OPTIONS ============ */}
+      <section className="bg-stone py-24 md:py-32">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            eyebrow="Materials"
+            title="Finishes For Every Style & Budget"
+            intro="We work with a wide range of materials and help you choose the right one for your home."
+          />
+          <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {materials.map((material) => (
+              <div key={material.title} className={`${floatingCard} p-7`}>
+                <h3 className="font-display text-lg font-normal">{material.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/70">{material.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ GALLERY ============ */}
+      <section className="bg-moss py-24 md:py-32">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            eyebrow="Recent Builds"
+            title="Stonework We're Proud Of"
+            intro="Patios, walkways, steps, and decks built across the Niagara Region."
+          />
+          <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {gallery.map((img) => (
+              <div key={img.src} className="group relative aspect-[4/3] overflow-hidden rounded-sm">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ CTA (deep green band) ============ */}
+      <section className="bg-brand py-20 text-white md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <Eyebrow className="mb-5 text-clay-soft">Ready When You Are</Eyebrow>
+          <h2 className="mx-auto max-w-2xl font-display text-3xl font-light leading-[1.2] md:text-4xl">
             Build Your Outdoor Living Space
           </h2>
-          <p className="text-lg md:text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Get a free quote for your hardscaping project. We'll bring expert craftsmanship and
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/80">
+            Get a free quote for your hardscaping project. We&apos;ll bring expert craftsmanship and
             lasting quality to your property.
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/quote">
-              Request Your Free Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="mt-9">
+            <Button size="lg" className={whiteBtn} asChild>
+              <Link href="/quote">Request Your Free Quote</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

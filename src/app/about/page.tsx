@@ -1,223 +1,234 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Award, Users, Heart, Clock, Leaf, Handshake } from 'lucide-react';
+import {
+  Eyebrow,
+  SectionHeading,
+  outlineBtn,
+  lightOutlineBtn,
+  whiteBtn,
+  floatingCard,
+  Grain,
+} from '@/components/site-ui';
+import { locations } from '@/data/locations';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About Us | GreenSweep Niagara',
-  description: 'Learn about GreenSweep Niagara, a locally-owned landscaping company founded in 2024, serving the Niagara Region with personalized, quality landscaping services.',
+  description:
+    'GreenSweep Niagara is a locally-owned landscaping company founded in 2024, transforming the finest properties across the Niagara Region with a personal, quality-first approach.',
 };
+
+const values = [
+  {
+    icon: Users,
+    title: 'Locally Owned',
+    body: 'As a local Niagara business, we are invested in our community and take pride in helping our neighbours create beautiful outdoor spaces.',
+  },
+  {
+    icon: Handshake,
+    title: 'Personalized Approach',
+    body: 'Every property is unique. We listen, understand your vision, and tailor our work to fit your goals and your budget.',
+  },
+  {
+    icon: Award,
+    title: 'Quality First',
+    body: 'We never cut corners. From materials to craftsmanship, we deliver work that exceeds expectations and stands the test of time.',
+  },
+  {
+    icon: Leaf,
+    title: 'Sustainable Practices',
+    body: 'We use environmentally responsible methods and recommend native plants for landscapes that are beautiful and eco-friendly.',
+  },
+  {
+    icon: Clock,
+    title: 'Reliable Service',
+    body: 'We show up on time, communicate clearly, and do what we say we will do. Reliability is the foundation of our business.',
+  },
+  {
+    icon: Heart,
+    title: 'Customer Satisfaction',
+    body: 'Your happiness is our success. We are not done until you are completely satisfied with the results.',
+  },
+];
 
 export default function AboutPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative h-[400px] lg:h-[500px]">
+      {/* ============ HERO ============ */}
+      <section className="relative flex min-h-[60vh] items-center md:min-h-[70vh]">
         <div className="absolute inset-0">
           <Image
-            src="/project-photos/2707940586657463592.jpg"
-            alt="About GreenSweep Niagara"
+            src="/project-photos/IMG_6586.JPEG"
+            alt="Lush deck garden framed by mature plantings"
             fill
-            className="object-cover brightness-75"
+            className="object-cover object-[50%_55%]"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/45 to-black/65" />
         </div>
-        <div className="relative container mx-auto h-full flex items-center px-4">
+        <div className="relative container mx-auto px-4">
           <div className="max-w-2xl text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">About Us</h1>
-            <p className="text-lg md:text-xl text-white/90">
-              Your locally-owned landscaping partner in the Niagara Region.
+            <Eyebrow className="mb-6 text-white/80">Our Story</Eyebrow>
+            <h1 className="font-display text-4xl font-light leading-[1.12] md:text-5xl lg:text-6xl">
+              About GreenSweep
+            </h1>
+            <p className="mt-8 max-w-xl text-lg font-light text-white/85 md:text-xl">
+              Your locally-owned landscaping partner, dedicated to the finest properties across the
+              Niagara Region.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* ============ OUR STORY (two-column) ============ */}
+      <section className="bg-cream py-24 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Our Story</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-muted-foreground mb-6">
-                Founded in 2024, GreenSweep Niagara is a locally-owned landscaping company born from
-                a passion for creating beautiful outdoor spaces. We started with a simple goal: to
-                provide the Niagara Region with high-quality, personalized landscaping services that
-                prioritize both aesthetics and functionality.
+          <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
+            <div>
+              <Eyebrow className="mb-5">Transforming Niagara Since 2024</Eyebrow>
+              <h2 className="font-display text-3xl font-light leading-[1.2] md:text-4xl">
+                A Local Company, Built On Pride
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-foreground/70">
+                GreenSweep Niagara was founded in 2024 by Carter, on a simple belief: that the people
+                who live here deserve outdoor spaces worthy of the region they call home. What began
+                as one truck and an obsession with doing things right has grown into a trusted local
+                team.
               </p>
-              <p className="text-lg text-muted-foreground mb-6">
-                We take a personalized approach to every project. Whether you need regular lawn
-                maintenance, a complete landscape design, or hardscaping services, we work closely
-                with you to understand your vision and bring it to life. No shortcuts—just quality
-                work that speaks for itself.
+              <p className="mt-4 text-lg leading-relaxed text-foreground/70">
+                We take a personal, hands-on approach to every project. Whether it&apos;s regular
+                lawn maintenance, a complete landscape design, or hardscaping, we work closely with
+                you to understand your vision and bring it to life. No shortcuts, just quality work
+                that speaks for itself.
               </p>
-              <p className="text-lg text-muted-foreground">
-                Our focus is on creating clean, low-maintenance, and functional landscapes that your
-                family will enjoy for years to come. We believe every outdoor space has potential,
-                and we're here to help you unlock it.
+              <p className="mt-4 text-lg leading-relaxed text-foreground/70">
+                Our focus is clean, lasting, low-maintenance landscapes your family will enjoy for
+                years. Every outdoor space has potential, and we&apos;re here to unlock it.
               </p>
+            </div>
+            <div className="relative h-[520px] overflow-hidden rounded-sm">
+              <Image
+                src="/project-photos/1.png"
+                alt="Upscale Niagara home with a timber-frame portico and sculpted landscaping"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="py-16 md:py-24 bg-secondary">
+      {/* ============ VALUES (floating cards) ============ */}
+      <section className="bg-stone py-24 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">What Sets Us Apart</h2>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <Users className="h-12 w-12 text-accent mb-4" />
-                  <CardTitle>Locally Owned</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    As a local Niagara business, we're invested in our community. We take pride in
-                    helping our neighbors create beautiful outdoor spaces.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <Handshake className="h-12 w-12 text-accent mb-4" />
-                  <CardTitle>Personalized Approach</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Every project is unique. We listen to your needs, understand your vision, and
-                    tailor our services to fit your specific goals and budget.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <Award className="h-12 w-12 text-accent mb-4" />
-                  <CardTitle>Quality First</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    We never cut corners. From materials to craftsmanship, we deliver work that
-                    exceeds expectations and stands the test of time.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <Leaf className="h-12 w-12 text-accent mb-4" />
-                  <CardTitle>Sustainable Practices</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    We use environmentally responsible methods and recommend native plants to create
-                    landscapes that are beautiful and eco-friendly.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <Clock className="h-12 w-12 text-accent mb-4" />
-                  <CardTitle>Reliable Service</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    We show up on time, communicate clearly, and do what we say we'll do. Reliability
-                    is the foundation of our business.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <Heart className="h-12 w-12 text-accent mb-4" />
-                  <CardTitle>Customer Satisfaction</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Your happiness is our success. We're not done until you're completely satisfied
-                    with the results.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Promise */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Promise</h2>
-            <div className="bg-secondary rounded-2xl p-8 md:p-12">
-              <p className="text-xl md:text-2xl text-foreground italic mb-6">
-                "We promise to treat your property as if it were our own, delivering honest work,
-                fair pricing, and results that make you proud to come home."
-              </p>
-              <p className="text-muted-foreground">
-                — The GreenSweep Niagara Team
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Area */}
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Serving the Niagara Region</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              We're proud to bring our expertise to communities throughout the Niagara Region,
-              including:
-            </p>
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-left">
-              {[
-                'St. Catharines',
-                'Niagara Falls',
-                'Welland',
-                'Thorold',
-                'Niagara-on-the-Lake',
-                'Port Colborne',
-                'Fort Erie',
-                'Grimsby',
-                'Lincoln',
-                'Pelham',
-                'Fonthill',
-                'Vineland',
-              ].map((city) => (
-                <div key={city} className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-accent" />
-                  <span className="text-muted-foreground">{city}</span>
+          <SectionHeading
+            eyebrow="What Sets Us Apart"
+            title="The Standards We Work By"
+            intro="A few principles guide everything we do, on every property we touch."
+          />
+          <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {values.map((value) => {
+              const Icon = value.icon;
+              return (
+                <div key={value.title} className={`${floatingCard} p-8`}>
+                  <span className="flex h-12 w-12 items-center justify-center rounded-sm bg-sage/10 text-sage transition-colors group-hover:bg-sage group-hover:text-white">
+                    <Icon className="h-5 w-5" strokeWidth={1.5} />
+                  </span>
+                  <h3 className="mt-6 font-display text-xl font-normal">{value.title}</h3>
+                  <p className="mt-3 leading-relaxed text-foreground/70">{value.body}</p>
                 </div>
-              ))}
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ OUR PROMISE (deep green band) ============ */}
+      <section className="bg-brand py-24 text-white md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow className="mb-6 text-clay-soft">Our Promise</Eyebrow>
+            <blockquote className="font-display text-2xl font-light leading-[1.4] md:text-3xl">
+              &ldquo;We promise to treat your property as if it were our own, delivering honest work,
+              fair pricing, and results that make you proud to come home.&rdquo;
+            </blockquote>
+            <p className="mt-8 text-sm uppercase tracking-[0.2em] text-white/55">
+              — The GreenSweep Niagara Team
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SERVICE AREA (map + community list) ============ */}
+      <section className="relative overflow-hidden bg-cream py-24 md:py-32">
+        <Grain />
+        <div className="relative container mx-auto px-4">
+          <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
+            {/* Region map — white background dropped out via multiply blend */}
+            <div className="relative mx-auto w-full max-w-lg">
+              <Image
+                src="/niagara-region.jpg"
+                alt="Map of the Niagara Region showing the communities GreenSweep serves"
+                width={1000}
+                height={1000}
+                className="h-auto w-full mix-blend-multiply"
+              />
+            </div>
+
+            {/* Areas list */}
+            <div>
+              <Eyebrow className="mb-5">Proudly Serving</Eyebrow>
+              <h2 className="font-display text-3xl font-light leading-[1.2] md:text-4xl">
+                Rooted In The Niagara Region
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-foreground/70">
+                From the lakeshore of Niagara-on-the-Lake to the vineyards of Lincoln, we care for
+                properties right across the region. Don&apos;t see your community? Reach out.
+                Chances are, we&apos;re right around the corner.
+              </p>
+              <div className="mt-10 grid grid-cols-2 gap-x-8">
+                {locations.map((loc) => (
+                  <Link
+                    key={loc.slug}
+                    href={`/areas/${loc.slug}`}
+                    className="group flex items-center gap-3 border-b border-brand/10 py-4 transition-colors hover:text-brand"
+                  >
+                    <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-clay transition-colors group-hover:bg-brand" />
+                    <span className="font-display text-lg font-normal text-foreground transition-colors group-hover:text-brand">
+                      {loc.name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+              <Button className={`${outlineBtn} mt-10`} asChild>
+                <Link href="/areas">
+                  View All Service Areas
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+      {/* ============ CTA (deep green band) ============ */}
+      <section className="bg-brand py-20 text-white md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
-          <p className="text-lg md:text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Ready to transform your outdoor space? Get in touch for a free consultation and
-            discover what GreenSweep Niagara can do for your property.
+          <Eyebrow className="mb-5 text-clay-soft">Let's Work Together</Eyebrow>
+          <h2 className="mx-auto max-w-2xl font-display text-3xl font-light leading-[1.2] md:text-4xl">
+            Ready To Transform Your Property?
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/80">
+            Get in touch for a free consultation and discover what GreenSweep can do for your
+            outdoor space.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
-              <Link href="/quote">
-                Get Free Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+            <Button size="lg" className={whiteBtn} asChild>
+              <Link href="/quote">Get a Free Quote</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+            <Button size="lg" className={lightOutlineBtn} asChild>
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>

@@ -213,7 +213,7 @@ export const locations: LocationData[] = [
     region: 'Niagara Region',
     tagline: 'Professional Landscaping for the Garden City',
     description:
-      'As the largest city in the Niagara Region, St. Catharines—the Garden City—offers diverse neighborhoods from historic Port Dalhousie to the established tree-lined streets of Glenridge and Western Hill. We provide premium landscaping services to homeowners who take pride in maintaining the city\'s beautiful reputation.',
+      'As the largest city in the Niagara Region, St. Catharines, the Garden City, offers diverse neighborhoods from historic Port Dalhousie to the established tree-lined streets of Glenridge and Western Hill. We provide premium landscaping services to homeowners who take pride in maintaining the city\'s beautiful reputation.',
     heroDescription:
       'Trusted landscaping services for St. Catharines\' finest neighborhoods and properties.',
     characteristics: [

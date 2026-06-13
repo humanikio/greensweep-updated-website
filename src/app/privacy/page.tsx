@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Eyebrow } from '@/components/site-ui';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | GreenSweep Niagara',
@@ -10,17 +10,20 @@ export default function PrivacyPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-16 md:py-20">
+      <section className="bg-brand py-20 text-white md:py-28">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-lg text-primary-foreground/90">
+          <Eyebrow className="mb-5 text-clay-soft">Legal</Eyebrow>
+          <h1 className="font-display text-4xl font-light leading-[1.12] md:text-5xl">
+            Privacy Policy
+          </h1>
+          <p className="mt-5 text-sm uppercase tracking-[0.18em] text-white/55">
             Last updated: January 2024
           </p>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-24 md:py-32 bg-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto prose prose-lg">
             <p className="text-lg text-muted-foreground mb-8">
@@ -29,11 +32,11 @@ export default function PrivacyPage() {
               website or use our services.
             </p>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">Information We Collect</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">Information We Collect</h2>
             <p className="text-muted-foreground mb-4">
               We may collect information about you in various ways, including:
             </p>
-            <h3 className="text-xl font-semibold mt-6 mb-3">Personal Information</h3>
+            <h3 className="font-display text-xl font-normal mt-6 mb-3">Personal Information</h3>
             <p className="text-muted-foreground mb-4">
               When you contact us, request a quote, or use our services, we may collect:
             </p>
@@ -45,7 +48,7 @@ export default function PrivacyPage() {
               <li>Service preferences and project details</li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-6 mb-3">Automatically Collected Information</h3>
+            <h3 className="font-display text-xl font-normal mt-6 mb-3">Automatically Collected Information</h3>
             <p className="text-muted-foreground mb-4">
               When you visit our website, we may automatically collect certain information, including:
             </p>
@@ -57,7 +60,7 @@ export default function PrivacyPage() {
               <li>IP address (anonymized)</li>
             </ul>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">How We Use Your Information</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">How We Use Your Information</h2>
             <p className="text-muted-foreground mb-4">
               We use the information we collect to:
             </p>
@@ -70,7 +73,7 @@ export default function PrivacyPage() {
               <li>Comply with legal obligations</li>
             </ul>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">Information Sharing</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">Information Sharing</h2>
             <p className="text-muted-foreground mb-4">
               We do not sell, trade, or rent your personal information to third parties. We may share
               your information only in the following circumstances:
@@ -82,14 +85,14 @@ export default function PrivacyPage() {
               <li>With your explicit consent</li>
             </ul>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">Cookies and Tracking</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">Cookies and Tracking</h2>
             <p className="text-muted-foreground mb-6">
               Our website may use cookies and similar tracking technologies to enhance your browsing
               experience. Cookies are small files stored on your device that help us understand how
               you use our site. You can control cookie preferences through your browser settings.
             </p>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">Data Security</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">Data Security</h2>
             <p className="text-muted-foreground mb-6">
               We implement appropriate technical and organizational measures to protect your personal
               information against unauthorized access, alteration, disclosure, or destruction. However,
@@ -97,7 +100,7 @@ export default function PrivacyPage() {
               absolute security.
             </p>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">Your Rights</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">Your Rights</h2>
             <p className="text-muted-foreground mb-4">
               You have the right to:
             </p>
@@ -109,34 +112,34 @@ export default function PrivacyPage() {
               <li>Withdraw consent where applicable</li>
             </ul>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">Third-Party Links</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">Third-Party Links</h2>
             <p className="text-muted-foreground mb-6">
               Our website may contain links to third-party websites. We are not responsible for the
               privacy practices or content of these external sites. We encourage you to review the
               privacy policies of any third-party sites you visit.
             </p>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">Children's Privacy</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">Children's Privacy</h2>
             <p className="text-muted-foreground mb-6">
               Our services are not directed to individuals under the age of 18. We do not knowingly
               collect personal information from children. If you believe we have inadvertently
               collected information from a child, please contact us immediately.
             </p>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">Changes to This Policy</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">Changes to This Policy</h2>
             <p className="text-muted-foreground mb-6">
               We may update this Privacy Policy from time to time. Any changes will be posted on this
               page with an updated "Last updated" date. We encourage you to review this policy
               periodically for any updates.
             </p>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">Contact Us</h2>
+            <h2 className="font-display text-2xl font-normal mt-12 mb-4">Contact Us</h2>
             <p className="text-muted-foreground mb-4">
               If you have questions or concerns about this Privacy Policy or our data practices,
               please contact us:
             </p>
-            <div className="bg-secondary rounded-lg p-6 mb-6">
-              <p className="text-foreground font-semibold mb-2">GreenSweep Niagara</p>
+            <div className="mb-6 rounded-sm border border-brand/10 bg-white p-6 shadow-sm">
+              <p className="mb-2 font-display text-lg font-normal text-foreground">GreenSweep Niagara</p>
               <p className="text-muted-foreground">
                 Email:{' '}
                 <a
