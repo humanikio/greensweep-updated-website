@@ -21,13 +21,13 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
           <div>
-            <Link href="/" className="mb-5 inline-block rounded-sm bg-[#e8e7e3] px-4 py-3">
+            <Link href="/" className="mb-5 inline-block">
               <Image
-                src="/GreenSweep-New-Logo.jpg"
+                src="/greensweep-logo-white.png"
                 alt="GreenSweep Landscaping"
-                width={2000}
-                height={1000}
-                className="h-9 w-auto md:h-10"
+                width={1000}
+                height={320}
+                className="h-12 w-auto md:h-14"
               />
             </Link>
             <p className="mb-6 text-sm leading-relaxed text-white/65">
