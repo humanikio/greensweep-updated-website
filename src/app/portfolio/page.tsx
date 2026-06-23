@@ -276,29 +276,29 @@ export default function PortfolioPage() {
             <ProjectCarousel
               projects={[
                 {
-                  src: '/project-photos/IMG_3760.JPEG',
-                  alt: 'Manicured front lawn',
-                  caption: 'Residential Lawn Care',
+                  src: '/project-photos/newer-project-photos/IMG_8635.JPG',
+                  alt: 'Freeform backyard pool with a paver patio beside a modern home',
+                  caption: 'Pool & Paver Patio',
                 },
                 {
-                  src: '/project-photos/IMG_6615.JPEG',
-                  alt: 'Composite deck set into a wooded ravine garden',
-                  caption: 'Deck & Landscape Integration',
+                  src: '/project-photos/newer-project-photos/IMG_8628.JPG',
+                  alt: 'Aerial view of an estate backyard with a pool and manicured lawn',
+                  caption: 'Backyard Pool & Landscape',
                 },
                 {
-                  src: '/project-photos/2707940586657463592.jpg',
-                  alt: 'Garden illuminated with landscape lighting at dusk',
-                  caption: 'Landscape Lighting',
+                  src: '/project-photos/newer-project-photos/IMG_8630.JPG',
+                  alt: 'Overhead view of a rectangular pool framed by a paver patio',
+                  caption: 'Pool & Patio Design',
                 },
                 {
-                  src: '/project-photos/IMG_6586.JPEG',
-                  alt: 'Lush deck garden framed by mature plantings',
-                  caption: 'Deck & Outdoor Living',
+                  src: '/project-photos/newer-project-photos/IMG_8633.JPG',
+                  alt: 'Curved pool with a paver patio and wicker lounge seating',
+                  caption: 'Poolside Lounge & Patio',
                 },
                 {
-                  src: '/project-photos/IMG_4057.JPEG',
-                  alt: 'Layered planting bed with shrubs and mulch',
-                  caption: 'Planting Design',
+                  src: '/project-photos/newer-project-photos/IMG_8631.JPG',
+                  alt: 'Aerial view of a backyard pool and patio framed by mature trees',
+                  caption: 'Pool & Garden Retreat',
                 },
               ]}
             />

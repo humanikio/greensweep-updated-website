@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { HeroSlideshow } from '@/components/hero-slideshow';
 import { ArrowRight, Star, Phone, Mail, Users, Leaf, Clock } from 'lucide-react';
 
 // Shared button + link treatments for the elevated homepage (no global Button changes).
@@ -49,24 +50,6 @@ const testimonials = [
   },
 ];
 
-const services = [
-  {
-    title: 'Front Yards',
-    image: '/project-photos/IMG_3759.JPEG',
-    href: '/services',
-  },
-  {
-    title: 'Backyards',
-    image: '/project-photos/IMG_6085.JPEG',
-    href: '/services',
-  },
-  {
-    title: 'Landscape Design',
-    image: '/project-photos/IMG_4043.JPEG',
-    href: '/services/landscape-design',
-  },
-];
-
 const featuredProjects = [
   {
     title: 'A Pavilion In The Trees',
@@ -96,16 +79,7 @@ export default function Home() {
     <div className="flex flex-col">
       {/* ============ HERO (full-bleed photo, centered) ============ */}
       <section className="relative flex min-h-[68vh] items-center md:min-h-[74vh]">
-        <div className="absolute inset-0">
-          <Image
-            src="/project-photos/newer-project-photos/IMG_5601.JPEG"
-            alt="Lakefront fire-pit lounge with Adirondack chairs overlooking the water"
-            fill
-            className="object-cover object-[50%_45%]"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/40 to-black/60" />
-        </div>
+        <HeroSlideshow />
         <div className="relative container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center text-white">
             <Eyebrow className="mb-6 text-white/80">Est. 2024 · Niagara Region</Eyebrow>
@@ -175,54 +149,6 @@ export default function Home() {
                 className="object-cover"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ SERVICES (warm taupe, card grid) ============ */}
-      <section className="bg-stone py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <Eyebrow className="mb-5">Explore The Possibilities</Eyebrow>
-            <h2 className="font-display text-3xl font-light leading-[1.2] md:text-4xl">
-              Every Space, Considered
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-foreground/70">
-              From the first impression at the curb to your own private corner out back, we bring the
-              same considered design and craftsmanship to every space on your property.
-            </p>
-          </div>
-          <div className="mx-auto max-w-6xl space-y-6 md:space-y-8">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="group relative h-[360px] overflow-hidden rounded-sm sm:h-[440px] lg:h-[500px]"
-              >
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-5 p-7 md:p-10">
-                  <h3 className="font-display text-3xl font-light leading-[1.1] text-white md:text-4xl">
-                    {service.title}
-                  </h3>
-                  <Button className={bannerBtn} asChild>
-                    <Link href={service.href}>Learn More</Link>
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-14 text-center">
-            <Button className={outlineBtn} asChild>
-              <Link href="/services">
-                View All Services
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

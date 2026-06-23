@@ -59,8 +59,8 @@ const PACKAGE_PARTS = [
   },
   {
     icon: Users,
-    image: '/project-photos/IMG_5800.JPEG',
-    alt: 'Finished patio with fire pit and gazebo built by one crew',
+    image: '/project-photos/newer-project-photos/IMG_8635.JPG',
+    alt: 'Finished backyard pool, paver patio, and modern home built by one crew',
     title: 'Designed & Built by One Crew',
     body: 'One local Niagara crew handles the design and the build from start to finish. One project, not separate jobs to coordinate.',
   },
@@ -68,9 +68,9 @@ const PACKAGE_PARTS = [
 
 const GALLERY = [
   {
-    src: '/project-photos/newer-project-photos/IMG_6613.JPEG',
-    alt: 'Composite deck with a river-rock channel, dining set, and hot tub',
-    caption: 'Composite deck & outdoor living',
+    src: '/project-photos/newer-project-photos/IMG_8633.JPG',
+    alt: 'Curved backyard pool with a paver patio, wicker lounge seating, and umbrella',
+    caption: 'Poolside patio & lounge',
   },
   {
     src: '/project-photos/newer-project-photos/IMG_5883.JPEG',
@@ -88,14 +88,9 @@ const GALLERY = [
     caption: 'Lakeside fire-pit lounge',
   },
   {
-    src: '/project-photos/IMG_5661.JPEG',
-    alt: 'Custom grey paver patio with fresh garden beds and river rock',
-    caption: 'Custom paver patio & garden beds',
-  },
-  {
-    src: '/project-photos/IMG_6614.JPEG',
-    alt: 'Composite deck with a river-rock channel, hosta beds, and seating',
-    caption: 'Outdoor living deck & river rock',
+    src: '/project-photos/newer-project-photos/IMG_8631.JPG',
+    alt: 'Aerial view of a backyard pool and paver patio framed by mature trees',
+    caption: 'Backyard pool & landscape',
   },
 ];
 
@@ -235,7 +230,7 @@ export default function OutdoorLivingPage() {
             ))}
           </div>
 
-          <div className="mx-auto mt-8 flex max-w-3xl items-start gap-5 rounded-sm border border-brand/10 bg-white p-6 text-left shadow-sm">
+          <div className="mx-auto mt-8 flex max-w-3xl flex-col gap-4 rounded-sm border border-brand/10 bg-white p-6 text-left shadow-sm sm:flex-row sm:items-start sm:gap-5">
             <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-sm bg-sage/10 text-sage">
               <Leaf className="h-5 w-5" strokeWidth={1.5} />
             </span>
